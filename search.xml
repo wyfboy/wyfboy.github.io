@@ -1,16 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>这是一个测试</title>
-    <url>/2020/10/08/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<img src="/2020/10/08/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95/美图.png" style="zoom:33%;">
-
-]]></content>
-      <tags>
-        <tag>你们好啊666</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>github_hexo图片无法显示</title>
     <url>/2020/10/08/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<h3 id="config-yml文件修改"><a href="#config-yml文件修改" class="headerlink" title="config.yml文件修改"></a>config.yml文件修改</h3><p>将 <code>post_asset_folder: false</code> 修改为 <code>post_asset_folder: true</code></p>
@@ -85,6 +75,16 @@ data[key] = $.html();
 ]]></content>
       <tags>
         <tag>github+hexo图片问题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>这是一个测试</title>
+    <url>/2020/10/08/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<img src="/2020/10/08/%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B5%8B%E8%AF%95/美图.png" style="zoom:33%;">
+
+]]></content>
+      <tags>
+        <tag>你们好啊666</tag>
       </tags>
   </entry>
 </search>
