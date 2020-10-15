@@ -1,0 +1,98 @@
+<hr>
+<p>title: External Libraries<br>description: NexT User Docs – Third-party Service Integration – External Libraries</p>
+<hr>
+<h3 id="PJAX"><a href="#PJAX" class="headerlink" title="PJAX"></a>PJAX</h3><p><a href="https://github.com/MoOx/pjax">Pjax</a> is a standalone JavaScript module that uses AJAX (XmlHttpRequest) and <code>pushState()</code> to deliver a fast browsing experience.</p>
+<p>It allows you to completely transform the user experience of standard websites (server-side generated or static ones) to make users feel like they are browsing an app, especially for those with low bandwidth connections.</p>
+<p>{% note warning %}<br>Please use the absolute path of the image or <a href="https://hexo.io/docs/tag-plugins#Include-Assets">Hexo asset_img tag</a> in your posts, otherwise the images may fail to load during Pjax refresh.<br>{% endnote %}</p>
+<p>You can enable it by setting value <code>pjax</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml"># Easily enable fast Ajax navigation on your website.
+# For more information: https://github.com/next-theme/pjax
+pjax: true</code></pre>
+<h3 id="Fancybox"><a href="#Fancybox" class="headerlink" title="Fancybox"></a>Fancybox</h3><p>NexT supports the fancybox plugin, which is a jQuery lightbox script for displaying images, videos and more. Touch enabled, responsive and fully customizable.</p>
+<p>You can enable it by setting value <code>fancybox</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml">fancybox: true</code></pre>
+<h3 id="Medium-Zoom"><a href="#Medium-Zoom" class="headerlink" title="Medium Zoom"></a>Medium Zoom</h3><p><a href="https://github.com/francoischalifour/medium-zoom">Medium Zoom</a> is a JavaScript library for zooming images like Medium.</p>
+<p>You can enable it by setting value <code>mediumzoom</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml"># A JavaScript library for zooming images like Medium.
+mediumzoom: true</code></pre>
+<p>{% note warning %}<br>Do not enable both <code>fancybox</code> and <code>mediumzoom</code>.<br>{% endnote %}</p>
+<h3 id="Lazyload"><a href="#Lazyload" class="headerlink" title="Lazyload"></a>Lazyload</h3><p><a href="https://github.com/ApoorvSaxena/lozad.js">Lozad.js</a> is a lazy loader plugin in modern vanilla JavaScript. It delays loading of images in long web pages. Images outside of viewport will not be loaded before user scrolls to them. This is opposite of image preloading.</p>
+<p>You can enable it by setting value <code>lazyload</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml"># Vanilla JavaScript plugin for lazyloading images.
+lazyload: true</code></pre>
+<p>Then run the following command in {% label info@site root dir %} to ensure that <code>lazyload</code> can be enabled or disabled correctly:</p>
+<pre><code class="bash">$ hexo clean</code></pre>
+<h3 id="Pangu-Autospace"><a href="#Pangu-Autospace" class="headerlink" title="Pangu Autospace"></a>Pangu Autospace</h3><p><a href="https://github.com/vinta/pangu.js">pangu.js</a> will automatically insert a blank space between all the Chinese characters and the hexagonal English numeric symbols on the page.</p>
+<p>You can enable it by setting value <code>pangu</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml"># Pangu Support
+pangu: true</code></pre>
+<h3 id="Quicklink"><a href="#Quicklink" class="headerlink" title="Quicklink"></a>Quicklink</h3><p><a href="https://github.com/GoogleChromeLabs/quicklink">Quicklink</a> is a JavaScript plugin that faster subsequent page-loads by prefetching in-viewport links during idle time. Chrome, Firefox, Edge are supported without polyfills.</p>
+<p>You can enable it by setting value <code>quicklink.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml">...
+quicklink:
+  enable: true
+  home: true
+  archive: true
+  delay: true
+  timeout: 3000
+  priority: true
+  ignores:
+...</code></pre>
+<h3 id="Animation-Effect"><a href="#Animation-Effect" class="headerlink" title="Animation Effect"></a>Animation Effect</h3><p>NexT enables animation effect by default which is supported by Anime.js and Animate.css, so it will wait for JavaScript loaded to show content.<br>If you need speed you can set this section <code>enable</code> to <code>false</code> to disable it.</p>
+<p>Edit {% label primary@theme config file %} and set the needed values under the <code>motion</code> to fit your demand. You can preview all Transition variants here: <a href="https://theme-next.js.org/animate/">NexT Animation Effect Preview</a>.</p>
+<pre><code class="yml"># Use Animate.css to animate everything.
+# For more information: https://animate.style
+motion:
+  enable: true
+  async: false
+  transition:
+    # All available Transition variants: https://theme-next.js.org/animate/
+    post_block: fadeIn
+    post_header: fadeInDown
+    post_body: fadeInDown
+    coll_header: fadeInLeft
+    # Only for Pisces | Gemini.
+    sidebar: fadeInUp</code></pre>
+<h3 id="Progress-Bar"><a href="#Progress-Bar" class="headerlink" title="Progress Bar"></a>Progress Bar</h3><p>Pace will automatically monitor your Ajax requests, event loop lag, document ready state and elements on your page to decide on the progress.</p>
+<p>{% subtabs pace1 %}</p>
+<!-- tab <code>pace</code> -->
+<p>You can enable it by setting value <code>pace.enable</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml">pace:
+  enable: true</code></pre>
+<!-- endtab -->
+<!-- tab <code>theme</code> -->
+<p>Pace includes a bunch of <a href="https://github.hubspot.com/pace/docs/welcome/">themes</a> to get you started. Just include the appropriate css file.</p>
+<ul>
+<li>pace-theme-big-counter</li>
+<li>pace-theme-bounce</li>
+<li>pace-theme-barber-shop</li>
+<li>pace-theme-center-atom</li>
+<li>pace-theme-center-circle</li>
+<li>pace-theme-center-radar</li>
+<li>pace-theme-center-simple</li>
+<li>pace-theme-corner-indicator</li>
+<li>pace-theme-fill-left</li>
+<li>pace-theme-flash</li>
+<li>pace-theme-flat-top</li>
+<li>pace-theme-loading-bar</li>
+<li>pace-theme-mac-osx</li>
+<li>pace-theme-material</li>
+<li>pace-theme-minimal</li>
+</ul>
+<p>By default NexT uses <code>minimal</code> theme (pace-theme-minimal). You can configure it by editing values in <code>pace.theme</code> section in {% label primary@theme config file %}.</p>
+<pre><code class="yml">pace:
+  theme: minimal</code></pre>
+<!-- endtab -->
+<p>{% endsubtabs %}</p>
+<h3 id="Canvas-Ribbon"><a href="#Canvas-Ribbon" class="headerlink" title="Canvas Ribbon"></a>Canvas Ribbon</h3><p><a href="https://github.com/hustcc/ribbon.js">canvas-ribbon.js</a> is a ribbon backgroud of website draw on canvas.</p>
+<p>You can enable it by setting value <code>canvas_ribbon</code> to <code>true</code> in {% label primary@theme config file %}. You can also configure the ribbon setting by editing values in <code>canvas_ribbon</code> section:</p>
+<ul>
+<li>size: The width of the ribbon.</li>
+<li>alpha: The transparency of the ribbon.</li>
+<li>zIndex: The display level of the ribbon.</li>
+</ul>
+<pre><code class="yml">canvas_ribbon:
+  enable: true
+  size: 300
+  alpha: 0.6
+  zIndex: -1</code></pre>

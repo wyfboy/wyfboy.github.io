@@ -1,0 +1,47 @@
+<hr>
+<p>title: Footer<br>description: NexT User Docs – Theme Settings – Footer</p>
+<hr>
+<h3 id="Site-Footer-Setting"><a href="#Site-Footer-Setting" class="headerlink" title="Site Footer Setting"></a>Site Footer Setting</h3><h4 id="Site-Start-Time"><a href="#Site-Start-Time" class="headerlink" title="Site Start Time"></a>Site Start Time</h4><p>By default NexT shows current year in the footer like <code>© 2020</code>. You can configure it to show the time gap like <code>© 2015 - 2020</code> by editing values in <code>since</code> section in {% label primary@theme config file %}.</p>
+<pre><code class="yml">footer:
+  since: 2015</code></pre>
+<h4 id="Site-Footer-Icon"><a href="#Site-Footer-Icon" class="headerlink" title="Site Footer Icon"></a>Site Footer Icon</h4><p>By default NexT shows red <code>heart</code> icon {% btn #,, heart %} with animation between year and copyright information in the footer. You can configure it by editing values in <code>icon</code> section in {% label primary@theme config file %}.</p>
+<p>{% tabs icon %}</p>
+<!-- tab <code>name</code> -->
+<p>The name of footer icon can be founded in <a href="https://fontawesome.com/">Font Awesome</a> site. <code>heart</code> is recommended.</p>
+<pre><code class="yml">footer:
+  icon:
+    name: fa fa-user</code></pre>
+<!-- endtab -->
+
+<!-- tab <code>animated</code> -->
+<p>Set up animated of footer icon by changing the value of <code>icon.animated</code>:</p>
+<ul>
+<li><strong><code>true</code></strong> → Icon will be animated.</li>
+<li><code>false</code> → Icon will not be animated.</li>
+</ul>
+<pre><code class="yml">footer:
+  icon:
+    animated: false</code></pre>
+<!-- endtab -->
+
+<!-- tab <code>color</code> -->
+<p>Set up color of footer icon by changing the value of <code>icon.color</code>. Please use Hex Code, and red (#ff0000) is recommended for <code>heart</code> icon.</p>
+<pre><code class="yml">footer:
+  icon:
+    color: &quot;#808080&quot;</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h4 id="Site-Copyright-Name"><a href="#Site-Copyright-Name" class="headerlink" title="Site Copyright Name"></a>Site Copyright Name</h4><p>By default NexT shows the name of <code>author</code> from {% label info@site config file %}. You can configure it by editing values in <code>copyright</code> section in {% label primary@theme config file %}.</p>
+<pre><code class="yml">footer:
+  copyright:</code></pre>
+<h4 id="Site-Platform-Information"><a href="#Site-Platform-Information" class="headerlink" title="Site Platform Information"></a>Site Platform Information</h4><p>By default NexT shows Hexo and Theme &amp; scheme information like <code>Powered by Hexo &amp; NexT.Muse</code>. You can configure it by editing <code>powered</code> section in {% label primary@theme config file %}.</p>
+<pre><code class="yml">footer:
+  powered: true</code></pre>
+<h4 id="Site-Beian-Information"><a href="#Site-Beian-Information" class="headerlink" title="Site Beian Information"></a>Site Beian Information</h4><p>Beian information is for Chinese users. By default NexT will not show the information of beian. You can configure it by editing values in <code>beian</code> section in {% label primary@theme config file %}.</p>
+<pre><code class="yml">footer:
+  beian:
+    enable: true
+    icp: 京ICP备 1234567890号-1
+    gongan_id: 1234567890
+    gongan_num: 京公网安备 1234567890号
+    gongan_icon_url: /uploads/beian.png</code></pre>

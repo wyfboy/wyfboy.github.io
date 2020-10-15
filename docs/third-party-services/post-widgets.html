@@ -1,0 +1,33 @@
+<hr>
+<p>title: Post Widgets<br>description: NexT User Docs – Third-party Service Integration – Post Widgets</p>
+<hr>
+<h3 id="Widgetpack-Rating"><a href="#Widgetpack-Rating" class="headerlink" title="Widgetpack Rating"></a>Widgetpack Rating</h3><p>Rating service with login through any social networks like Facebook, Twitter, Google+, LinkedIn, Instagram and others.</p>
+<p>{% tabs rating %}</p>
+<!-- tab Get ID → -->
+<p>Login to <a href="https://widgetpack.com/admin#signin">widgetpack</a> and add new site, you will get your site ID:</p>
+<pre><code class="html">wpac_init.push({widget: &#39;Rating&#39;, id: ID});</code></pre>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+
+<p>You can enable it by setting value <code>rating.enable</code> to <code>true</code>, and copy <code>ID</code> value of <code>id</code> in {% label primary@theme config file %}. You can also configure the rating color by editing values in <code>rating.color</code> section.</p>
+<pre><code class="yml">rating:
+  enable: false
+  id:     ID #&lt;app_id&gt;
+  color:  &quot;#fc6423&quot;</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="AddThis"><a href="#AddThis" class="headerlink" title="AddThis"></a>AddThis</h3><p>{% tabs addthis %}</p>
+<!-- tab Sign Up → -->
+<p>Sign up in <a href="https://www.addthis.com/">AddThis</a>. You can use Google/Facebook/Twitter to login.</p>
+<!-- endtab -->
+
+<!-- tab AddThis ID → -->
+<p>Get AddThis ID in this menu: <code>More..</code> → <code>General</code> → <code>ID</code>. See example on the picture below:<br><img src="/images/docs/add-this-id.png" alt="AddThis ID"></p>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+<p>Edit the configurations in <code>add_this_id</code> section in the {% label primary@theme config file %} as following:</p>
+<pre><code class="yml">add_this_id: your_add_this_id</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>

@@ -1,0 +1,80 @@
+<hr>
+<p>title: SEO<br>description: NexT User Docs – Theme Settings – SEO</p>
+<hr>
+<h3 id="SEO-Setting"><a href="#SEO-Setting" class="headerlink" title="SEO Setting"></a>SEO Setting</h3><p>Next provides useful options for better Search Engine Optimization (SEO).</p>
+<p>{% note info %}<br>By default a canonical link tag is created in Hexo after you have set up your URL <code>url: http://yoursite.com</code> in {% label info@site config file %}. More detailed information can be found in <a href="https://support.google.com/webmasters/answer/139066">Consolidate duplicate URLs</a>.<br>{% endnote %}</p>
+<p>{% tabs SEO %}</p>
+<!-- tab <code>disable_baidu_transformation</code> -->
+<p>By default China’s search engine Baidu will cache and rewrite your site to provide a webpage snapshot for mobile users. You can disable this by setting the value <code>disable_baidu_transformation</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml">disable_baidu_transformation: true</code></pre>
+<!-- endtab -->
+
+<!-- tab <code>index_with_subtitle</code> -->
+<p>Set the value <code>enable</code> to <code>true</code> in <code>index_with_subtitle</code> section to add <code>subtitle</code> information in {% label info@site config file %} to index page.</p>
+<pre><code class="yml">index_with_subtitle: true</code></pre>
+<!-- endtab -->
+
+<p>{% endtabs %}</p>
+<h3 id="ExtURL"><a href="#ExtURL" class="headerlink" title="ExtURL"></a>ExtURL</h3><p>External URL with BASE64 encrypt &amp; decrypt which provide nonsense for search engines to <code>&lt;a&gt;</code> tags.</p>
+<h4 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h4><p>Search engines scan <code>&lt;a&gt;</code> tag with hight priority. You may add <code>external</code> / <code>nofollow</code> / <code>noopener</code> / <code>noreferrer</code> or any similar tricks, in any case all external links from your site will be indexed on your site. But here exists another trick: crawlers doesn’t reproduce any javascript – this do clients on their local devices.<br>That tag give the way to set any external link without <code>&lt;a&gt;</code> tag. So, some crawlers like Yandex will not give away links weight from your site and this very useful for SEO. This tag perform:</p>
+<ul>
+<li>Replaces <code>a</code> HTML tag with <code>span</code> HTML tag.</li>
+<li>Crypt &amp; Decrypt URL with BASE64. User cannot see base64 format in browser src for this link, but he will see tooltip where this URL pointed to or will be shown custom title which can be specified in <code>title</code> tag parameter.</li>
+<li>Backlinks by this tag will not be scanned by any monitoring. It’s like you open new link with javascript at new tab.</li>
+<li>Works on mobile devices too, yep.</li>
+</ul>
+<p>{% note warning %}<br>This tag was created exceptionally for better SEO-optimization. Any attempts to confuse end-user by phishing links not allowed!<br>{% endnote %}</p>
+<h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><p>Just one setting must be turned on under the <code>SEO Settings</code> section in {% label primary@theme config file %}:</p>
+<pre><code class="yml">exturl: true</code></pre>
+<p>Then run the following command in {% label info@site root dir %} to ensure that <code>exturl</code> can be enabled or disabled correctly:</p>
+<pre><code class="bash">$ hexo clean</code></pre>
+<h3 id="Webmaster-Tools"><a href="#Webmaster-Tools" class="headerlink" title="Webmaster Tools"></a>Webmaster Tools</h3><h4 id="Google-Webmaster-Tools"><a href="#Google-Webmaster-Tools" class="headerlink" title="Google Webmaster Tools"></a>Google Webmaster Tools</h4><p>Set the verification string of <a href="https://www.google.com/webmasters/tools">Google Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs google-webmaster-tools %}</p>
+<!-- tab Get Verification Code → -->
+<p>Login to Google Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:</p>
+<pre><code class="html">&lt;meta name=&quot;google-site-verification&quot; content=&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;&gt;</code></pre>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>google_site_verification</code> section:</p>
+<pre><code class="yml">google_site_verification: XXXXXXXXXXXXXXXXXXXXXXX</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h4 id="Bing-Webmaster-Tools"><a href="#Bing-Webmaster-Tools" class="headerlink" title="Bing Webmaster Tools"></a>Bing Webmaster Tools</h4><p>Set the verification string of <a href="https://www.bing.com/webmaster/">Bing Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs bing-webmaster-tools %}</p>
+<!-- tab Get Verification Code → -->
+<p>Login to Bing Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:</p>
+<pre><code class="html">&lt;meta name=&quot;msvalidate.01&quot; content=&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;&gt;</code></pre>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>bing_site_verification</code> section:</p>
+<pre><code class="yml">bing_site_verification: XXXXXXXXXXXXXXXXXXXXXXX</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h4 id="Yandex-Webmaster-Tools"><a href="#Yandex-Webmaster-Tools" class="headerlink" title="Yandex Webmaster Tools"></a>Yandex Webmaster Tools</h4><p>Set the verification string of <a href="https://webmaster.yandex.ru/">Yandex Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs yandex-webmaster-tools %}</p>
+<!-- tab Get Verification Code → -->
+<p>Login to Yandex Webmaster Tools and go to verification methods and choose <code>Meta Tag</code>, you will get some code:</p>
+<pre><code class="html">&lt;meta name=&quot;yandex-verification&quot; content=&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;&gt;</code></pre>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>yandex_site_verification</code> section:</p>
+<pre><code class="yml">yandex_site_verification: XXXXXXXXXXXXXXXXXXXXXXX</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h4 id="Baidu-Webmaster-Tools"><a href="#Baidu-Webmaster-Tools" class="headerlink" title="Baidu Webmaster Tools"></a>Baidu Webmaster Tools</h4><p>Set the verification string of <a href="https://ziyuan.baidu.com/site/">Baidu Webmaster Tools</a> which is used in submitting sitemap.</p>
+<p>{% tabs Baidu-webmaster-tools %}</p>
+<!-- tab Get Verification Code → -->
+<p>Login to Baidu Webmaster Tools and go to verification methods and choose <code>HTML Tag</code>, you will get some code:</p>
+<pre><code class="html">&lt;meta name=&quot;baidu-site-verification&quot; content=&quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;&gt;</code></pre>
+<!-- endtab -->
+
+<!-- tab NexT Config -->
+<p>Copy <code>XXXXXXXXXXXXXXXXXXXXXXX</code> value of <code>content</code> key.<br>Edit {% label primary@theme config file %} and add or change <code>baidu_site_verification</code> section:</p>
+<pre><code class="yml">baidu_site_verification: XXXXXXXXXXXXXXXXXXXXXXX</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>NexT also supports the baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO. You can enable it by setting value <code>baidu_push</code> to <code>true</code> in {% label primary@theme config file %}.</p>
+<pre><code class="yml">baidu_push: true</code></pre>

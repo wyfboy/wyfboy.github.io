@@ -1,0 +1,154 @@
+<hr>
+<p>title: Custom Pages<br>description: NexT User Docs – Theme Settings - Custom Pages</p>
+<hr>
+<h3 id="Custom-Page-Support"><a href="#Custom-Page-Support" class="headerlink" title="Custom Page Support"></a>Custom Page Support</h3><p>Next allows users to add custom pages in menu.</p>
+<p>{% tabs adding-custom-page %}</p>
+<!-- tab Adding New Page → -->
+<p>Change to {% label info@site root directory %} in your terminal. Use <code>hexo new page custom-name</code> to create a new <code>custom-name</code> page:</p>
+<pre><code class="bash">$ cd hexo-site
+$ hexo new page custom-name</code></pre>
+<!-- endtab -->
+
+<!-- tab Setting Front-matter Values → -->
+<p>Front-matter is a block of YAML or JSON at the beginning of the file that is used to configure settings for your writings. Settings Front-matter values and more detailed can be found in <a href="https://hexo.io/docs/front-matter">Front-matter</a>. You can also add contents in <code>custom-name/index.md</code> if you like.</p>
+<pre><code class="md">title: custom-name
+date: 2014-12-22 12:39:04
+---</code></pre>
+<!-- endtab -->
+
+<!-- tab Editting Menu -->
+<p>Add <code>custom-name</code> to <code>menu</code> by editing {% label primary@theme config file %}, like adding <code>about</code> page:</p>
+<pre><code class="yml">menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  about: /about/ || fa fa-user</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>If you want to add Tags or Categories page, please continue reading.<br>Please read <a href="https://hexo.io/docs/front-matter#Categories-amp-Tags">Hexo’s Docs of Categories &amp; Tags</a> to know how to add tags or categories for articles.<br>Following code shows you a example of article with tags:</p>
+<p>{% tabs tags-variants %}</p>
+<!-- tab Variant 1 -->
+<pre><code class="md">title: Tags Testing Article
+tags: [Testing, Another Tag]
+---</code></pre>
+<!-- endtab -->
+
+<!-- tab Variant 2 -->
+<pre><code class="md">title: Tags Testing Article
+tags:
+  - Testing
+  - Another Tag
+---</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Use-Archive-Page-as-Home-Page"><a href="#Use-Archive-Page-as-Home-Page" class="headerlink" title="Use Archive Page as Home Page"></a>Use Archive Page as Home Page</h3><p>You can configure the path of archive and index generator in {% label info@site config file %}, e.g.</p>
+<pre><code class="yml">archive_dir: /
+
+index_generator:
+  path: archives
+  per_page: 10
+  order_by: -date</code></pre>
+<h3 id="Adding-«Tags»-Page"><a href="#Adding-«Tags»-Page" class="headerlink" title="Adding «Tags» Page"></a>Adding «Tags» Page</h3><p>Adding «Tags» page and show «Tags» link in menu. «Tags» page will show all tags of site. If no article has tags, this page will leave blank.</p>
+<p>{% tabs adding-tags-page %}</p>
+<!-- tab Adding New Page → -->
+<p>Change to {% label info@site root directory %} in your terminal. Use <code>hexo new page tags</code> to create a new <code>tags</code> page:</p>
+<pre><code class="bash">$ cd hexo-site
+$ hexo new page tags</code></pre>
+<!-- endtab -->
+
+<!-- tab Setting Page Type → -->
+<p>Edit the new page and change the type to <code>&quot;tags&quot;</code>, theme will show tags cloud automatically in this page. Page content looks like following:</p>
+<pre><code class="md">title: Tags
+date: 2014-12-22 12:39:04
+type: tags
+---</code></pre>
+<!-- endtab -->
+
+<!-- tab Editting Menu -->
+<p>Add <code>tags</code> to <code>menu</code> by editing {% label primary@theme config file %}, like following:</p>
+<pre><code class="yml">menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  tags: /tags/ || fa fa-tags</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>{% note warning %}<br>If you enable any comment system for your site, comments will be shown for all posts and pages.<br>See <a href="/docs/third-party-services/comments.html#How-to-Disable-Comments-on-Page">«How to Disable Comments on Page»</a> if you want to do it for pages like <code>tags</code> or <code>categories</code>.<br>{% endnote %}</p>
+<h4 id="Tagcloud"><a href="#Tagcloud" class="headerlink" title="Tagcloud"></a>Tagcloud</h4><p>By default, NexT has setted font color and size for tagcloud in tags page.<br>From NexT v7.0.2 you can customize them, just set related values in {% label primary@theme config file %}:</p>
+<pre><code class="yml"># TagCloud settings for tags page.
+tagcloud:
+  min: 12 # Minimun font size in px
+  max: 30 # Maxium font size in px
+  amount: 200 # Total amount of tags
+  orderby: name # Order of tags
+  order: 1 # Sort order</code></pre>
+<h3 id="Adding-«Categories»-Page"><a href="#Adding-«Categories»-Page" class="headerlink" title="Adding «Categories» Page"></a>Adding «Categories» Page</h3><p>{% note default %}<br>«Categories» page can be added in similar way as <a href="#Adding-%C2%ABTags%C2%BB-Page">«Tags» page</a>, only name there is difference: just need to replace <code>tags</code> with <code>categories</code>.<br>{% endnote %}</p>
+<h3 id="Adding-Google-Calendar-Page"><a href="#Adding-Google-Calendar-Page" class="headerlink" title="Adding Google Calendar Page"></a>Adding Google Calendar Page</h3><p>{% tabs calendar %}</p>
+<!-- tab Adding Schedule Page → -->
+<p>Change to {% label info@site root directory %} in your terminal. Use <code>hexo new page schedule</code> to create a new <code>schedule</code> page:</p>
+<pre><code class="bash">$ cd hexo-site
+$ hexo new page schedule</code></pre>
+<!-- endtab -->
+
+<!-- tab Setting Front-matter Values → -->
+<p>Front-matter is a block of YAML or JSON at the beginning of the file that is used to configure settings for your writings. Settings Front-matter values and more detailed can be found in <a href="https://hexo.io/docs/front-matter">Front-matter</a>. You can also add contents in <code>schedule/index.md</code> if you like.</p>
+<pre><code class="md">title: Schedule
+date: 2014-12-22 12:39:04
+type: schedule
+---</code></pre>
+<!-- endtab -->
+
+<!-- tab Editting Menu → -->
+<p>Add <code>schedule</code> to <code>menu</code> by editing {% label primary@theme config file %}:</p>
+<pre><code class="yml">menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  schedule: /schedule/ || fa fa-calendar</code></pre>
+<!-- endtab -->
+
+<!-- tab Setting Google Calendar-->
+
+<p>{% subtabs calendar1 %}</p>
+<!-- tab Get calendar ID and API KEY → -->
+<p>Login to <a href="https://console.developers.google.com/flows/enableapi?apiid=calendar">Google developers</a> and add Google Calendar API, you will get your calendar ID and API KEY. <a href="https://developers.google.com/calendar/quickstart/js">More detailed documentation</a></p>
+<p>References:</p>
+<ul>
+<li>API Documentation: <a href="https://developers.google.com/google-apps/calendar/v3/reference/events/list">https://developers.google.com/google-apps/calendar/v3/reference/events/list</a></li>
+<li>To get api_key: <a href="https://console.developers.google.com/">https://console.developers.google.com</a></li>
+<li>Create &amp; manage a public Google calendar: <a href="https://support.google.com/calendar/answer/37083">https://support.google.com/calendar/answer/37083</a><!-- endtab -->
+<!-- tab NexT Config -->
+You can enable it by setting values in <code>calendar</code> part. Copy the value of calendar ID and API KEY in {% label primary@theme config file %}.</li>
+</ul>
+<pre><code class="yml">calendar:
+  calendar_id: &lt;required&gt;
+  api_key: &lt;required&gt;
+  orderBy: startTime
+  showLocation: false
+  offsetMax: 72
+  offsetMin: 4
+  showDeleted: false
+  singleEvents: true
+  maxResults: 250</code></pre>
+<!-- endtab -->
+<p>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Custom-404-Page"><a href="#Custom-404-Page" class="headerlink" title="Custom 404 Page"></a>Custom 404 Page</h3><p>In your terminal, change to the <code>source</code> folder of {% label info@site root directory %}. Create a new folder called <code>404</code>, then create a new page in it:</p>
+<pre><code class="bash">$ cd hexo-site
+$ hexo new page 404</code></pre>
+<p>Make sure <code>relative_link</code> is disabled in {% label info@site config file %}:</p>
+<pre><code class="yml">relative_link: false</code></pre>
+<p>{% note warning %}<br>Whether users can be redirected to the 404 page depends on the settings of the website hosting service or web server, not Hexo. For example, if you use Nginx as the server, you also need to configure the 404 page in <code>nginx.conf</code> file.<br>{% endnote %}</p>
+<h4 id="Commonweal-404"><a href="#Commonweal-404" class="headerlink" title="Commonweal 404"></a>Commonweal 404</h4><p>If you would like to enable <code>commonweal 404</code> (A service provided by Tencent in China), Edit <code>404/index.md</code> like this:</p>
+<pre><code class="md">---
+title: &#39;404&#39;
+date: 2014-12-22 12:39:04
+comments: false
+---
+&lt;script src=&quot;//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js&quot;
+        charset=&quot;utf-8&quot; homePageUrl=&quot;/&quot; homePageName=&quot;Back to home&quot;&gt;
+&lt;/script&gt;</code></pre>
+<p>You can also add any content you want to it.</p>
+<p>Add <code>404</code> to <code>menu</code> by editing {% label primary@theme config file %}:</p>
+<pre><code class="yml">menu:
+  home: / || fa fa-home
+  archives: /archives/ || fa fa-archive
+  commonweal: /404/ || fa fa-heartbeat</code></pre>

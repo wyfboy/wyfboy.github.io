@@ -1,0 +1,27 @@
+<hr>
+<p>title: Update from Version 5<br>description: NexT User Docs – Update from v5.x / v7.x</p>
+<hr>
+<p>NexT version 5 works fine with Hexo 3, but for frequent users, you maybe need to upgrade version 5 to 8 to get features and supports in new <a href="https://github.com/next-theme/hexo-theme-next">Theme-Next</a> repository.</p>
+<p>There are no hard breaking changes between 5.1.x and the latest version. It’s change major version to 8 because:</p>
+<ol>
+<li>Main repositorie was rebased from <a href="https://github.com/iissnan/hexo-theme-next">iissnan’s</a> profile to <a href="https://github.com/next-theme">next-theme</a> organization.</li>
+<li>Most libraries under the <code>next/source/lib</code> directory was moved out to <a href="https://github.com/next-theme/plugins">external repositories under NexT organization</a>.</li>
+<li>3rd-party plugin <a href="https://github.com/willin/hexo-wordcount"><code>hexo-wordcount</code></a> was replaced by <a href="https://github.com/next-theme/hexo-word-counter"><code>hexo-word-counter</code></a> because <code>hexo-word-counter</code> doesn’t have any external Node.js dependencies, nor <a href="https://github.com/willin/hexo-wordcount/issues/7">language filter</a> which causes better performance on speed at site generation.</li>
+</ol>
+<p>So, NexT suggest to update from version 5 to version 8 in this way:</p>
+<ol>
+<li><p>You don’t touch old <code>next</code> dir and just do some copies of NexT files:<br> 1.1. <code>_config.yml</code> or <code>next.yml</code> (if you used <a href="/docs/getting-started/configuration.html">Alternate Theme Config</a>).<br> 1.2. Custom CSS styles what placed in <code>next/source/css/_custom/*</code> and <code>next/source/css/_variables/*</code> directories.<br> 1.3. Custom layout styles what placed in <code>next/layout/_custom/*</code>.<br> 1.4. Any another possible custom additions which can be finded by compare tools between repositories.</p>
+</li>
+<li><p>Clone new repositorie to any another directory instead of <code>next</code>. For example, in <code>next-reloaded</code> directory: <code>git clone https://github.com/next-theme/hexo-theme-next themes/next-reloaded</code>. So, you don’t touch your old NexT 5.1.x directory and can work with new <code>next-reloaded</code> dir.</p>
+</li>
+<li><p>Go to Hexo main config and set theme parameter: <code>theme: next-reloaded</code>. So, your <code>next-reloaded</code> directory must loading with your generation. If you may see any bugs or you simply not like this version, in anytime you can switch for 5.1.x version back.</p>
+</li>
+<li><p>Update language configuration (For Chinese)</p>
+<p> Since v6.0.3, <code>zh-Hans</code> has been renamed to <code>zh-CN</code>: <a href="https://github.com/next-theme/hexo-theme-next/releases/tag/v6.0.3">https://github.com/next-theme/hexo-theme-next/releases/tag/v6.0.3</a></p>
+<p> Users upgrading to v6.0.3 and later need to explicitly modify the <code>language</code> configuration in the Hexo main config file <code>_config.yml</code>, otherwise the language display is incorrect.</p>
+</li>
+<li><p>Update Hexo and Hexo plugin</p>
+<p> If after completing the above steps, an error occurs when executing <code>hexo s</code> or <code>hexo g</code>, it means that there may be a conflict between the old version of Hexo / Hexo plugin and the new version of the theme NexT. We recommend upgrading Hexo to versions 4.0 or later and upgrading Hexo plugins to the latest version. You can run <code>npm outdated</code> to see all the upgradeable plugins.</p>
+</li>
+</ol>
+<p>And how to enable 3rd-party libraries see <a href="/docs/third-party-services/#Adding-Plugins">here</a>.</p>

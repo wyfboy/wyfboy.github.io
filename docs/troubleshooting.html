@@ -1,0 +1,103 @@
+<hr>
+<p>title: Troubleshooting<br>description: NexT User Docs – Troubleshooting</p>
+<hr>
+<h3 id="Quick-Debug-Instructions"><a href="#Quick-Debug-Instructions" class="headerlink" title="Quick Debug Instructions"></a>Quick Debug Instructions</h3><p><strong>Before submitting an Issue on GitHub, you can follow the steps below to debug:</strong></p>
+<p>If you get an error message from Hexo or your browser:</p>
+<ul>
+<li>If the error comes from a Hexo plugin, such as hexo-enhancer, please submit an Issue to its GitHub repository.</li>
+<li>If the error comes from a third-party service, such as the Gitalk comment system, please submit an Issue to its GitHub repository.</li>
+<li>Otherise, please search in Google / Stackoverflow / GitHub Issues, or report it to us when submitting a new Issue.</li>
+</ul>
+<p>The following steps will help you determine the cause of the problem:</p>
+<ul>
+<li>Execute <code>hexo clean</code>, clear the browser cache and disable all CDN services (e.g. Cloudflare Rocket Loader) - This may take some time to take effect.</li>
+<li>Disable browser plug-ins or use other devices and browsers to test, because bugs may only occur in specific browsers.</li>
+<li>Switch to another theme and check if the bug still exists (e.g. default theme landscape). In other words, prove that this is a bug of NexT, not Hexo.</li>
+<li>Upgrade theme NexT to the latest version.</li>
+<li>Upgrade Hexo and all Hexo plugins to the latest version.</li>
+<li>Upgrade or downgrade Node.js to the latest LTS version.</li>
+<li>Uninstall all non-essential Hexo plugins, or delete <code>node_modules</code> and then reinstall all plugins using <code>npm install --force</code>.</li>
+</ul>
+<p>If you decide to submit an Issue, please answer the following questions based on the Issue template:</p>
+<ul>
+<li>Can you reproduce the problem? Can you reliably reproduce the issue? If not, provide details about how often the problem happens and under which conditions it normally happens.</li>
+<li>Did the problem start happening recently or was this always a problem?</li>
+<li>If the problem started happening recently, can you reproduce the problem in an older version of NexT? What’s the most recent version in which the problem doesn’t happen? You can download older versions of NexT from <a href="https://github.com/next-theme/hexo-theme-next/releases">the releases page</a>.</li>
+<li>Which version of Node, Hexo and NexT are you using? You can get the exact version by running <code>node -v</code>, <code>hexo version</code> in your terminal.</li>
+<li>Which packages do you have installed? You can get that list by copying the output from <code>npm ls --depth 0</code> in Hexo root directory.</li>
+</ul>
+<h3 id="Keep-Up-Indentation"><a href="#Keep-Up-Indentation" class="headerlink" title="Keep Up Indentation"></a>Keep Up Indentation</h3><p>When you edit any YAML configs, always need to keep up indents.<br>Currently, in all Hexo and NexT configuration files parameters uses <strong>2 spaces indents</strong> from parent option.</p>
+<p>For example, we want to change NexT scheme from standart <code>Muse</code> to <code>Gemini</code> and want to use <code>theme_config</code> feature with <a href="/docs/getting-started/configuration.html#theme-config">Alternate Theme Config</a>.</p>
+<p>{% tabs keep-up-indentation %}</p>
+<!-- tab NexT Config → -->
+<p>We open {% label primary@theme config file %} and under the «Scheme Settings» section copy next parameters:</p>
+<pre><code class="yml"># ---------------------------------------------------------------
+# Scheme Settings
+# ---------------------------------------------------------------
+
+scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+#scheme: Gemini</code></pre>
+<!-- endtab -->
+
+<!-- tab Hexo Config -->
+<p>Then we open {% label info@site config file %} and paste these parameters under <code>theme_config</code> section:</p>
+<p>{% subtabs 2-spaces-indents %}</p>
+<!-- tab {% label danger@Nothing Happen %}-->
+<pre><code class="yml">theme_config:
+
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+scheme: Gemini</code></pre>
+<p>Nothing will happen here because indentation not keeped up. Hexo just can’t read these parameters because subparameters (children parameters of <code>theme_config</code> parameter) does not exist. Let’s see <a href="#2-spaces-indents-2">same configuration with indents</a>.</p>
+<!-- endtab -->
+
+<!-- tab {% label success@Working Normally %}-->
+<pre><code class="yml">theme_config:
+
+  #scheme: Muse
+  #scheme: Mist
+  #scheme: Pisces
+  scheme: Gemini</code></pre>
+<p>And here Hexo can read these parameters as <code>theme_config.scheme: Gemini</code> in same way, as NexT can read <code>scheme: Gemini</code> parameter. So, with 2 spaces indents from parent option(s) Hexo will load all NexT parameters and work fine.</p>
+<!-- endtab -->
+<p>{% endsubtabs %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="Backtick-Code-Block-in-Tags"><a href="#Backtick-Code-Block-in-Tags" class="headerlink" title="Backtick Code Block in Tags"></a>Backtick Code Block in Tags</h3><p>For Hexo before version 4.0, when backtick code block(s) exists inside other tags (like <code>blockquote</code>, <code>note</code>, <code>tabs</code>), that code block will be generated as «undefined» string in HTML. There are several ways to resolve this:</p>
+<p>{% tabs backtick-code-block %}</p>
+<!-- tab {% label success@Tagged Code Block %} -->
+<p>Instead of <a href="https://hexo.io/docs/tag-plugins#Backtick-Code-Block">Backtick Code Block</a> you can also use tagged <a href="https://hexo.io/docs/tag-plugins#Code-Block">Code Block</a>.<br>But in rare cases standard code block can obtain errors inside other tags.</p>
+<!-- endtab -->
+
+<!-- tab HTML tags -->
+<p>Use HTML tags instead of Hexo tags: <code>&lt;pre&gt;&lt;code&gt;</code>.<br>In this case you can’t add code syntax highlighting.</p>
+<!-- endtab -->
+
+<!-- tab Bugfix for Backtick -->
+<p>Here is the <a href="https://github.com/hexojs/hexo/pull/2321">PR with bugfix for backtick code block inside tags</a> (Submitted in 2016, merged three years later).<br>So, upgrade to Hexo 4.0 or later, if you need to use backtick code block inside tags.</p>
+<p>{% note danger %}<br>Sometimes during generate you can see «{% label danger@Error: Unmatched placeholder remains! %}» message.<br>This mean somewhere in your posts, blocks with tags was commented out with <code>{% raw %}{#{% endraw %}</code> and <code>{% raw %}#}{% endraw %}</code> symbols:</p>
+<p>{% tabs unmatched-placeholder-remains %}</p>
+<!-- tab {% label danger@Error %} -->
+<pre><code>{% raw %}{#
+{% label error@Unmatched placeholder remains! %}
+#}{% endraw %}</code></pre>
+<!-- endtab -->
+
+<!-- tab {% label success@Success %} -->
+<pre><code>{% raw %}
+{% label error@Unmatched placeholder remains! %}
+{% endraw %}</code></pre>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<p>{% endnote %}</p>
+<!-- endtab -->
+<p>{% endtabs %}</p>
+<h3 id="TOC-Issues"><a href="#TOC-Issues" class="headerlink" title="TOC Issues"></a>TOC Issues</h3><p>Do not write a skip-level heading in the post. For example, a third-tier heading <code>###</code> followed by a <code>#####</code> is not recommended.<br>See: <a href="https://github.com/theme-next/hexo-theme-next/issues/882">https://github.com/theme-next/hexo-theme-next/issues/882</a></p>
+<p>If you are using <code>hexo-renderer-markdown-it</code>, it’s recommended to install <code>markdown-it-named-headings</code> to make the TOC work correctly.</p>
+<pre><code class="bash">npm install markdown-it-named-headings</code></pre>
+<p>See: <a href="https://github.com/theme-next/hexo-theme-next/issues/1168">https://github.com/theme-next/hexo-theme-next/issues/1168</a><br>Here is the <a href="https://github.com/hexojs/hexo-renderer-markdown-it/pull/90">PR with bugfix for default config</a> of <code>hexo-renderer-markdown-it</code> plugin.</p>
+<h3 id="Favicon-Set-but-Doesn’t-Work"><a href="#Favicon-Set-but-Doesn’t-Work" class="headerlink" title="Favicon Set but Doesn’t Work"></a>Favicon Set but Doesn’t Work</h3><p>Put your <code>favicon</code> under {% label info@site’s %} <code>source</code> dir. If you find that your Favicon doesn’t work, please clean your browser’s cache first and then visit your Favicon’s URL directly, which should be <code>http(s)://your-domain.com/favicon.ico</code>.</p>
+<p>{% note warning %}<br>If your site is in a subdirectory please set it to <code>favicon: favicon.ico</code>.<br>{% endnote %}</p>

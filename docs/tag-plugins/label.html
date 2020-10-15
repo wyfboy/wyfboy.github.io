@@ -1,0 +1,19 @@
+<hr>
+<p>title: Label<br>description: NexT User Docs – NexT Supported Tags – Label</p>
+<hr>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="md">{% label [class]@text %}
+
+[class] : Optional parameter.
+          Supported values: default | primary | success | info | warning | danger.
+          If not specified, the default style of the browser will be used,
+          which may be different in different browsers.
+text    : &#39;@text&#39; can be specified with or without space
+          E.g. &#39;success @text&#39; is the same as &#39;success@text&#39;.</code></pre>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">Lorem {% label @ipsum %} {% label primary@dolor sit %} amet, consectetur {% label success@adipiscing elit, %} sed {% label info@do eiusmod %} tempor incididunt ut labore et dolore magna aliqua.
+
+Ut enim *{% label warning @ad %}* minim veniam, quis **{% label danger@nostrud %}** exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+Duis aute irure dolor in reprehenderit in voluptate ~~{% label default @velit %}~~ &lt;mark&gt;esse&lt;/mark&gt; cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</code></pre>
+<p>Lorem {% label @ipsum %} {% label primary@dolor sit %} amet, consectetur {% label success@adipiscing elit, %} sed {% label info@do eiusmod %} tempor incididunt ut labore et dolore magna aliqua.</p>
+<p>Ut enim <em>{% label warning @ad %}</em> minim veniam, quis <strong>{% label danger@nostrud %}</strong> exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Duis aute irure dolor in reprehenderit in voluptate <del>{% label default @velit %}</del> <mark>esse</mark> cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

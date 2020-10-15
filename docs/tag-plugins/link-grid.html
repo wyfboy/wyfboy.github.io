@@ -1,0 +1,27 @@
+<hr>
+<p>title: Link Grid<br>description: NexT User Docs – NexT Supported Tags – Link Grid</p>
+<hr>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="md">{% linkgrid [image] [delimiter] [comment] %}{% endlinkgrid %}
+{% lg [image] [delimiter] [comment] %}{% endlg %}
+
+[image]     : Optional parameter.
+              Default image URL.
+[delimiter] : Optional parameter.
+              If the optional delimiter parameter is given, it is interpreted as the delimiter of items in each line.
+[comment]   : Optional parameter.
+              If the optional comment parameter is given, it is interpreted as the symbol to comment out a line.</code></pre>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">{% linkgrid %}
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+% Theme NexT | https://theme-next.js.org/ | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png
+{% endlinkgrid %}</code></pre>
+<p>{% linkgrid %}<br>Theme NexT | <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png<br>Theme NexT | <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png<br>Theme NexT | <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png<br>Theme NexT | <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png<br>% Theme NexT | <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> | Stay Simple. Stay NexT. | /images/apple-touch-icon-next.png<br>{% endlinkgrid %}</p>
+<pre><code class="md">{% lg /images/apple-touch-icon-next.png , %}
+Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png
+Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png
+Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png
+% Theme NexT , https://theme-next.js.org/ , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png
+{% endlg %}</code></pre>
+<p>{% lg /images/apple-touch-icon-next.png , %}<br>Theme NexT , <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png<br>Theme NexT , <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png<br>Theme NexT , <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png<br>% Theme NexT , <a href="https://theme-next.js.org/">https://theme-next.js.org/</a> , Stay Simple. Stay NexT. , /images/apple-touch-icon-next.png<br>{% endlg %}</p>

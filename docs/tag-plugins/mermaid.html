@@ -1,0 +1,84 @@
+<hr>
+<p>title: Mermaid<br>description: NexT User Docs – NexT Supported Tags – Mermaid</p>
+<hr>
+<h3 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h3><pre><code class="yml"># Mermaid tag
+mermaid:
+  enable: true
+  # Available themes: default | dark | forest | neutral
+  theme: forest</code></pre>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><pre><code class="md">{% mermaid type %}
+{% endmermaid %}
+
+type : type of the mermaid chart, visit https://github.com/mermaid-js/mermaid for more information.</code></pre>
+<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><pre><code class="md">{% mermaid graph TD %}
+A[Hard] --&gt;|Text| B(Round)
+B --&gt; C{Decision}
+C --&gt;|One| D[Result 1]
+C --&gt;|Two| E[Result 2]
+{% endmermaid %}</code></pre>
+<p>{% mermaid graph TD %}<br>A[Hard] –&gt;|Text| B(Round)<br>B –&gt; C{Decision}<br>C –&gt;|One| D[Result 1]<br>C –&gt;|Two| E[Result 2]<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid sequenceDiagram %}
+Alice-&gt;&gt;John: Hello John, how are you?
+loop Healthcheck
+    John-&gt;&gt;John: Fight against hypochondria
+end
+Note right of John: Rational thoughts!
+John--&gt;&gt;Alice: Great!
+John-&gt;&gt;Bob: How about you?
+Bob--&gt;&gt;John: Jolly good!
+{% endmermaid %}</code></pre>
+<p>{% mermaid sequenceDiagram %}<br>Alice-&gt;&gt;John: Hello John, how are you?<br>loop Healthcheck<br>    John-&gt;&gt;John: Fight against hypochondria<br>end<br>Note right of John: Rational thoughts!<br>John–&gt;&gt;Alice: Great!<br>John-&gt;&gt;Bob: How about you?<br>Bob–&gt;&gt;John: Jolly good!<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid gantt %}
+section Section
+Completed :done,    des1, 2014-01-06,2014-01-08
+Active        :active,  des2, 2014-01-07, 3d
+Parallel 1   :         des3, after des1, 1d
+Parallel 2   :         des4, after des1, 1d
+Parallel 3   :         des5, after des3, 1d
+Parallel 4   :         des6, after des4, 1d
+{% endmermaid %}</code></pre>
+<p>{% mermaid gantt %}<br>section Section<br>Completed :done,    des1, 2014-01-06,2014-01-08<br>Active        :active,  des2, 2014-01-07, 3d<br>Parallel 1   :         des3, after des1, 1d<br>Parallel 2   :         des4, after des1, 1d<br>Parallel 3   :         des5, after des3, 1d<br>Parallel 4   :         des6, after des4, 1d<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid classDiagram %}
+Class01 &lt;|-- AveryLongClass : Cool
+&lt;&lt;interface&gt;&gt; Class01
+Class09 --&gt; C2 : Where am i?
+Class09 --* C3
+Class09 --|&gt; Class07
+Class07 : equals()
+Class07 : Object[] elementData
+Class01 : size()
+Class01 : int chimp
+Class01 : int gorilla
+class Class10 {
+  &lt;&lt;service&gt;&gt;
+  int id
+  size()
+}
+{% endmermaid %}</code></pre>
+<p>{% mermaid classDiagram %}<br>Class01 &lt;|– AveryLongClass : Cool<br>&lt;<interface>&gt; Class01<br>Class09 –&gt; C2 : Where am i?<br>Class09 –* C3<br>Class09 –|&gt; Class07<br>Class07 : equals()<br>Class07 : Object[] elementData<br>Class01 : size()<br>Class01 : int chimp<br>Class01 : int gorilla<br>class Class10 {<br>  &lt;<service>&gt;<br>  int id<br>  size()<br>}<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid stateDiagram %}
+[*] --&gt; Still
+Still --&gt; [*]
+Still --&gt; Moving
+Moving --&gt; Still
+Moving --&gt; Crash
+Crash --&gt; [*]
+{% endmermaid %}</code></pre>
+<p>{% mermaid stateDiagram %}<br>[<em>] –&gt; Still<br>Still –&gt; [</em>]<br>Still –&gt; Moving<br>Moving –&gt; Still<br>Moving –&gt; Crash<br>Crash –&gt; [*]<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid pie %}
+&quot;Dogs&quot; : 386
+&quot;Cats&quot; : 85
+&quot;Rats&quot; : 15
+{% endmermaid %}</code></pre>
+<p>{% mermaid pie %}<br>“Dogs” : 386<br>“Cats” : 85<br>“Rats” : 15<br>{% endmermaid %}</p>
+<pre><code class="md">{% mermaid journey %}
+title My working day
+section Go to work
+  Make tea: 5: Me
+  Go upstairs: 3: Me
+  Do work: 1: Me, Cat
+section Go home
+  Go downstairs: 5: Me
+  Sit down: 3: Me
+{% endmermaid %}</code></pre>
+<p>{% mermaid journey %}<br>title My working day<br>section Go to work<br>  Make tea: 5: Me<br>  Go upstairs: 3: Me<br>  Do work: 1: Me, Cat<br>section Go home<br>  Go downstairs: 5: Me<br>  Sit down: 3: Me<br>{% endmermaid %}</p>
