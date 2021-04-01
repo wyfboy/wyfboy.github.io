@@ -125,8 +125,7 @@
     <url>/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
     <content><![CDATA[<h3 id="config-yml文件修改"><a href="#config-yml文件修改" class="headerlink" title="config.yml文件修改"></a>config.yml文件修改</h3><p>将 <code>post_asset_folder: false</code> 修改为 <code>post_asset_folder: true</code></p>
 <p>在新建博文时可以同时在_posts文件夹中创建一个同名文件夹，可以用来存放这个.md博文的图片，易于管理。</p>
-<h3 id="Typora偏好设置"><a href="#Typora偏好设置" class="headerlink" title="Typora偏好设置"></a>Typora偏好设置</h3><img data-src="github-hexo图片无法显示/Typora偏好设置.png" style="zoom:100%;">
-
+<h3 id="Typora偏好设置"><a href="#Typora偏好设置" class="headerlink" title="Typora偏好设置"></a>Typora偏好设置</h3><p><img data-src="github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/Typora%E5%81%8F%E5%A5%BD%E8%AE%BE%E7%BD%AE.png"></p>
 <p>插入同名文件夹里的图片可以看到路径是相对路径：</p>
 <img data-src="/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/%E8%B7%AF%E5%BE%84%E6%98%BE%E7%A4%BA.png" class>
 
