@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Configuration注解用法</title>
-    <url>/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="Configuration使用示例"><a href="#Configuration使用示例" class="headerlink" title="Configuration使用示例"></a>Configuration使用示例</h2><p>1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的</p>
-<p>2、配置类本身也是组件</p>
-<p>3、proxyBeanMethods：代理bean的方法</p>
-<span id="more"></span>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Full(proxyBeanMethods = <span class="keyword">true</span>)、【保证每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是单实例的】</span><br><span class="line">Lite(proxyBeanMethods = <span class="keyword">false</span>)【每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是新创建的】</span><br></pre></td></tr></table></figure>
-
-<p><strong>组件依赖必须使用Full模式默认。其他默认是否Lite模式</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration(proxyBeanMethods = false)</span> <span class="comment">//告诉SpringBoot这是一个配置类 == 配置文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * Full:外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   <span class="meta">@Bean</span> <span class="comment">//给容器中添加组件。以方法名作为组件的id。返回类型就是组件类型。返回的值，就是组件在容器中的实例</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> User <span class="title">user01</span><span class="params">()</span></span>&#123;</span><br><span class="line">   User zhangsan = <span class="keyword">new</span> User(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>);</span><br><span class="line">   <span class="comment">//user组件依赖了Pet组件</span></span><br><span class="line">   zhangsan.setPet(tomcatPet());</span><br><span class="line">   <span class="keyword">return</span> zhangsan;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean(&quot;tom&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Pet <span class="title">tomcatPet</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Pet(<span class="string">&quot;tomcat&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>@Configuration测试代码如下</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">相当于</span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.atguigu.boot&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainApplication</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1、返回我们IOC容器</span></span><br><span class="line">    ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2、查看容器里面的组件</span></span><br><span class="line">    String[] names = run.getBeanDefinitionNames();</span><br><span class="line">    <span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3、从容器中获取组件</span></span><br><span class="line"></span><br><span class="line">    Pet tom01 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    Pet tom02 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;组件：&quot;</span>+(tom01 == tom02));</span><br><span class="line">    <span class="comment">//4、com.atguigu.boot.config.MyConfig$$EnhancerBySpringCGLIB$$51f1e1ca@1654a892</span></span><br><span class="line">    MyConfig bean = run.getBean(MyConfig.class);</span><br><span class="line">    System.out.println(bean);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果@Configuration(proxyBeanMethods = true)代理对象调用方法。SpringBoot总会检查这个组件是否在容器中有。</span></span><br><span class="line">    <span class="comment">//保持组件单实例</span></span><br><span class="line">    User user = bean.user01();</span><br><span class="line">    User user1 = bean.user01();</span><br><span class="line">    System.out.println(user == user1);</span><br><span class="line">    User user01 = run.getBean(<span class="string">&quot;user01&quot;</span>, User.class);</span><br><span class="line">    Pet tom = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;用户的宠物：&quot;</span>+(user01.getPet() == tom));</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>SpringBoot</category>
-      </categories>
-      <tags>
-        <tag>注解</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AOP与OOP的比较</title>
     <url>/2021/03/27/AOP/</url>
     <content><![CDATA[<h2 id="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？"><a href="#AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？" class="headerlink" title="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？"></a>AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？</h2><p>​        Aop主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合的隔离效果。</p>
@@ -61,8 +36,33 @@
         <category>SpringBoot</category>
       </categories>
       <tags>
-        <tag>注解</tag>
         <tag>AOP</tag>
+        <tag>注解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Configuration注解用法</title>
+    <url>/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="Configuration使用示例"><a href="#Configuration使用示例" class="headerlink" title="Configuration使用示例"></a>Configuration使用示例</h2><p>1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的</p>
+<p>2、配置类本身也是组件</p>
+<p>3、proxyBeanMethods：代理bean的方法</p>
+<span id="more"></span>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Full(proxyBeanMethods = <span class="keyword">true</span>)、【保证每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是单实例的】</span><br><span class="line">Lite(proxyBeanMethods = <span class="keyword">false</span>)【每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是新创建的】</span><br></pre></td></tr></table></figure>
+
+<p><strong>组件依赖必须使用Full模式默认。其他默认是否Lite模式</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration(proxyBeanMethods = false)</span> <span class="comment">//告诉SpringBoot这是一个配置类 == 配置文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * Full:外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   <span class="meta">@Bean</span> <span class="comment">//给容器中添加组件。以方法名作为组件的id。返回类型就是组件类型。返回的值，就是组件在容器中的实例</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> User <span class="title">user01</span><span class="params">()</span></span>&#123;</span><br><span class="line">   User zhangsan = <span class="keyword">new</span> User(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>);</span><br><span class="line">   <span class="comment">//user组件依赖了Pet组件</span></span><br><span class="line">   zhangsan.setPet(tomcatPet());</span><br><span class="line">   <span class="keyword">return</span> zhangsan;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean(&quot;tom&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Pet <span class="title">tomcatPet</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Pet(<span class="string">&quot;tomcat&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>@Configuration测试代码如下</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">相当于</span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.atguigu.boot&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainApplication</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1、返回我们IOC容器</span></span><br><span class="line">    ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2、查看容器里面的组件</span></span><br><span class="line">    String[] names = run.getBeanDefinitionNames();</span><br><span class="line">    <span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3、从容器中获取组件</span></span><br><span class="line"></span><br><span class="line">    Pet tom01 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    Pet tom02 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;组件：&quot;</span>+(tom01 == tom02));</span><br><span class="line">    <span class="comment">//4、com.atguigu.boot.config.MyConfig$$EnhancerBySpringCGLIB$$51f1e1ca@1654a892</span></span><br><span class="line">    MyConfig bean = run.getBean(MyConfig.class);</span><br><span class="line">    System.out.println(bean);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果@Configuration(proxyBeanMethods = true)代理对象调用方法。SpringBoot总会检查这个组件是否在容器中有。</span></span><br><span class="line">    <span class="comment">//保持组件单实例</span></span><br><span class="line">    User user = bean.user01();</span><br><span class="line">    User user1 = bean.user01();</span><br><span class="line">    System.out.println(user == user1);</span><br><span class="line">    User user01 = run.getBean(<span class="string">&quot;user01&quot;</span>, User.class);</span><br><span class="line">    Pet tom = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;用户的宠物：&quot;</span>+(user01.getPet() == tom));</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>注解</tag>
       </tags>
   </entry>
   <entry>

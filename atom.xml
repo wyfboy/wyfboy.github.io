@@ -56,9 +56,9 @@
     <category term="SpringBoot" scheme="http://wyfboy.github.io/categories/SpringBoot/"/>
     
     
-    <category term="注解" scheme="http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
-    
     <category term="AOP" scheme="http://wyfboy.github.io/tags/AOP/"/>
+    
+    <category term="注解" scheme="http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
