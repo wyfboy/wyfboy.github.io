@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-02 16:24:03" itemprop="dateModified" datetime="2021-04-02T16:24:03+08:00">2021-04-02</time>
+                <time title="修改时间：2021-04-02 16:28:51" itemprop="dateModified" datetime="2021-04-02T16:28:51+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -332,16 +332,16 @@
 
 <p>如果去掉**–global**参数，只会对当前仓库有效。</p>
 <hr>
-<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402105859872.png" alt="image-20210402105859872"></p>
+<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><p><img data-src="image-20210402105859872.png" alt="image-20210402105859872"></p>
 <ul>
 <li>workspace：工作区</li>
 <li>staging area：暂存区/缓存区</li>
 <li>local repository：版本库或本地仓库</li>
 <li>remote repository：远程仓库</li>
 </ul>
-<h3 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h3><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110153681.png" alt="image-20210402110153681"></p>
-<h4 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h4><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110222956.png" alt="image-20210402110222956"></p>
-<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h4><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110241186.png" alt="image-20210402110241186"></p>
+<h3 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h3><p><img data-src="image-20210402110153681.png" alt="image-20210402110153681"></p>
+<h4 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h4><p><img data-src="image-20210402110222956.png" alt="image-20210402110222956"></p>
+<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h4><p><img data-src="image-20210402110241186.png" alt="image-20210402110241186"></p>
 <h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><p>创建分支命令：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchName)</span><br></pre></td></tr></table></figure>
 
@@ -370,12 +370,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ touch README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git add README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git commit -m &quot;第一次版本提交&quot;</span><br><span class="line">[master 31185f1] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (wyf)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br></pre></td></tr></table></figure>
 
 <p>以下操作将add进暂存区的文件删除：</p>
-<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402145541386.png" alt="image-20210402145541386"></p>
+<p><img data-src="image-20210402145541386.png" alt="image-20210402145541386"></p>
 <p>在wyf分支上移除了一个文件test.txt并添加了一个文件runoob.php，但我们切换回master分支，发现test.txt又回来了，并且新增的runoob.php不在主分支上。</p>
 <p>这样使用分支将工作切分开来，从而让我们在不同的开发环境中做事，并来回切换。</p>
-<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402152823094.png" alt="image-20210402152823094"></p>
+<p><img data-src="image-20210402152823094.png" alt="image-20210402152823094"></p>
 <p>将wyf分支合并到主分支上去，这样wyf分支中的runoob.php将会到master分支上,并且test.txt被删除。合并后，wyf分支就可以删除了：</p>
-<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402153933923.png" alt="image-20210402153933923"></p>
+<p><img data-src="image-20210402153933923.png" alt="image-20210402153933923"></p>
 
       
     </div>
