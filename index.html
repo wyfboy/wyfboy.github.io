@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-02 16:28:51" itemprop="dateModified" datetime="2021-04-02T16:28:51+08:00">2021-04-02</time>
+                <time title="修改时间：2021-04-02 16:30:52" itemprop="dateModified" datetime="2021-04-02T16:30:52+08:00">2021-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,106 +277,15 @@
 
       
           <h2 id="Git基本概念"><a href="#Git基本概念" class="headerlink" title="Git基本概念"></a>Git基本概念</h2><h3 id="集中式和分布式的版本控制系统的比较"><a href="#集中式和分布式的版本控制系统的比较" class="headerlink" title="集中式和分布式的版本控制系统的比较"></a>集中式和分布式的版本控制系统的比较</h3><ul>
-<li>集中式的版本控制（CVCS），中央服务器作为协同工作的版本控制系统，可以让在不同系统上的开发者协同工作。但是若中央服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</li>
-</ul>
-<p>​                                        <img data-src="image-20210402144454484.png" alt="image-20210402144454484" style="zoom:50%;">        </p>
-<ul>
-<li>分布式版本控制系统（DVCS），客户端并不只是提取到最新版本的文件快照，而是把代码仓库完整的镜像下来，包括完整的历史记录。这么一来，任何一处协同工作的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</li>
-</ul>
-<img data-src="image-20210402144032267.png" style="zoom:50%;">
-
-<h3 id="Git基本概念-1"><a href="#Git基本概念-1" class="headerlink" title="Git基本概念"></a>Git基本概念</h3><ul>
-<li><strong>工作区</strong>：在电脑中能看到的目录。</li>
-<li><strong>暂存区</strong>：一般放在<code>.git</code>目录下的index文件（.git/index）中。</li>
-<li><strong>版本库</strong>：工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库。</li>
-</ul>
-<p><img data-src="image-20210401134958468.png" alt="image-20210401134958468"></p>
-<ul>
-<li>“index”标记的为暂存区，“master”标记的为master分支所代表的目录树</li>
-<li>当对工作区修改（或新增）的文件执行<code>git add</code>命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
-<li>当执行提交操作<code>git commit</code>时，暂存区的目录树写到版本库中，master分支会做相应的更新。即master指向的目录树就是提交时暂存区的目录树。</li>
-<li>当执行<code>git reset HEAD</code>命令时，暂存区的目录树会被重写，被master分支指向的目录树所替代，但是工作区不受影响。</li>
-<li>当执行<code>git rm --cached &lt;file&gt;</code>命令时，会直接从暂存区删除文件，工作区则不会做出改变。</li>
-<li>当执行 <code>git checkout .</code>或者 <code>git checkout -- &lt;file&gt;</code>命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</li>
-<li>当执行 <code>git checkout HEAD .</code>或 <code>git checkout HEAD &lt;file&gt;</code>命令时，会用HEAD指向的master分支中的全部或者部分文件替换暂存区和工作区中的文件。这个命令也是极具危险的，因为不仅会清除工作区的未提交的改动，也会清除暂存区中未提交的改动。</li>
-</ul>
-<h2 id="Git创建仓库"><a href="#Git创建仓库" class="headerlink" title="Git创建仓库"></a>Git创建仓库</h2><h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><p>使用当前目录作为Git仓库，我们只需使它初始化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-
-<p>该命令执行完后会在当前目录生成一个.git目录。</p>
-<p>使用我们指定目录作为Git仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init newrepo</span><br></pre></td></tr></table></figure>
-
-<p>初始化后，会在newrepo目录下出现一个名为.git的目录，所有Git需要的数据和资源都存放在这个目录中。如果当前目录下有几个文件想要纳入版本控制，需要先用<code>git add</code>命令告诉Git开始对这些文件进行跟踪，然后提交：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &quot;初始化项目版本&quot;</span><br></pre></td></tr></table></figure>
-
-<p>以上命令将目录下以.c结尾及README文件提交到仓库中。</p>
-<hr>
-<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>克隆仓库的命令格式:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;repo&gt;</span><br></pre></td></tr></table></figure>
-
-<p>克隆到指定的目录：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;repo&gt; &lt;directory&gt;</span><br></pre></td></tr></table></figure>
-
-<p>可以使用不同的协议克隆，其中最常见的是ssh，因为速度较快，还可以配置公钥免输入密码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:fsliurujie&#x2F;test.git         --SSH协议</span><br><span class="line">git clone git:&#x2F;&#x2F;github.com&#x2F;fsliurujie&#x2F;test.git          --GIT协议</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;fsliurujie&#x2F;test.git      --HTTPS协议</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>使用<code>git config</code>命令配置git</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">credential.helper&#x3D;osxkeychain</span><br><span class="line">core.repositoryformatversion&#x3D;0</span><br><span class="line">core.filemode&#x3D;true</span><br><span class="line">core.bare&#x3D;false</span><br><span class="line">core.logallrefupdates&#x3D;true</span><br><span class="line">core.ignorecase&#x3D;true</span><br><span class="line">core.precomposeunicode&#x3D;true</span><br></pre></td></tr></table></figure>
-
-<p>编辑git配置文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config -e  #针对当前仓库</span><br><span class="line">或者：</span><br><span class="line">$ git config -e --global  #针对系统上所有仓库</span><br></pre></td></tr></table></figure>
-
-<p>设置提交代码时的用户信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;wyfboy&quot;</span><br><span class="line">$ git config --global user.email test@wyfboy.com</span><br></pre></td></tr></table></figure>
-
-<p>如果去掉**–global**参数，只会对当前仓库有效。</p>
-<hr>
-<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><p><img data-src="image-20210402105859872.png" alt="image-20210402105859872"></p>
-<ul>
-<li>workspace：工作区</li>
-<li>staging area：暂存区/缓存区</li>
-<li>local repository：版本库或本地仓库</li>
-<li>remote repository：远程仓库</li>
-</ul>
-<h3 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h3><p><img data-src="image-20210402110153681.png" alt="image-20210402110153681"></p>
-<h4 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h4><p><img data-src="image-20210402110222956.png" alt="image-20210402110222956"></p>
-<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h4><p><img data-src="image-20210402110241186.png" alt="image-20210402110241186"></p>
-<h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><p>创建分支命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchName)</span><br></pre></td></tr></table></figure>
-
-<p>切换分支命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout (branchName)</span><br></pre></td></tr></table></figure>
-
-<p>切换分支时，Git会用该分支的最后提交的快照替换你的工作区目录的内容，所以多个分支不需要多个目录。</p>
-<hr>
-<p>列出分支命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-
-<p>合并分支命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branchName&gt;</span><br></pre></td></tr></table></figure>
-
-<p>一旦某分支有了独立的内容，可以使用以上命令将任何分支合并到当前主分支中，合并完后就可以删除分支了。 </p>
-<hr>
-<p>删除分支命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d (branchName)</span><br></pre></td></tr></table></figure>
-
-<p>合并冲突：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">UU runoob.php</span><br><span class="line">$ git add runoob.php</span><br><span class="line">$ git status -s</span><br><span class="line">M  runoob.php</span><br><span class="line">$ git commit</span><br><span class="line">[master 88afe0e] Merge branch &#39;change_site&#39;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h3><p>以下操作把README.md添加版本控制，这样在每个分支上都会看到</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ touch README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git add README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git commit -m &quot;第一次版本提交&quot;</span><br><span class="line">[master 31185f1] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (wyf)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br></pre></td></tr></table></figure>
-
-<p>以下操作将add进暂存区的文件删除：</p>
-<p><img data-src="image-20210402145541386.png" alt="image-20210402145541386"></p>
-<p>在wyf分支上移除了一个文件test.txt并添加了一个文件runoob.php，但我们切换回master分支，发现test.txt又回来了，并且新增的runoob.php不在主分支上。</p>
-<p>这样使用分支将工作切分开来，从而让我们在不同的开发环境中做事，并来回切换。</p>
-<p><img data-src="image-20210402152823094.png" alt="image-20210402152823094"></p>
-<p>将wyf分支合并到主分支上去，这样wyf分支中的runoob.php将会到master分支上,并且test.txt被删除。合并后，wyf分支就可以删除了：</p>
-<p><img data-src="image-20210402153933923.png" alt="image-20210402153933923"></p>
-
+<li><p>集中式的版本控制（CVCS），中央服务器作为协同工作的版本控制系统，可以让在不同系统上的开发者协同工作。但是若中央服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</p></li></ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
