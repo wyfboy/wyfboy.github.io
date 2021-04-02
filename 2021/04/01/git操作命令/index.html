@@ -24,24 +24,31 @@
     var CONFIG = {"hostname":"wyfboy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？​        Aop主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合的隔离效果。">
+  <meta name="description" content="Git基本概念集中式和分布式的版本控制系统的比较 集中式的版本控制（CVCS），中央服务器作为协同工作的版本控制系统，可以让在不同系统上的开发者协同工作。但是若中央服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。  ​                                                  分布式版本控制系统（DVCS），客户端并不只是提取到最新版">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AOP与OOP的比较">
-<meta property="og:url" content="http://wyfboy.github.io/2021/03/27/AOP/index.html">
+<meta property="og:title" content="git操作命令">
+<meta property="og:url" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="竹林幽居">
-<meta property="og:description" content="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？​        Aop主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合的隔离效果。">
+<meta property="og:description" content="Git基本概念集中式和分布式的版本控制系统的比较 集中式的版本控制（CVCS），中央服务器作为协同工作的版本控制系统，可以让在不同系统上的开发者协同工作。但是若中央服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。  ​                                                  分布式版本控制系统（DVCS），客户端并不只是提取到最新版">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://wyfboy.github.io/2021/03/27/AOP/oop.png">
-<meta property="og:image" content="http://wyfboy.github.io/2021/03/27/AOP/aop.png">
-<meta property="article:published_time" content="2021-03-27T08:37:07.000Z">
-<meta property="article:modified_time" content="2021-03-27T09:55:44.716Z">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402144454484.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402144032267.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210401134958468.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402105859872.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110153681.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110222956.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110241186.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402145541386.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402152823094.png">
+<meta property="og:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402153933923.png">
+<meta property="article:published_time" content="2021-04-01T05:49:00.000Z">
+<meta property="article:modified_time" content="2021-04-02T08:19:59.695Z">
 <meta property="article:author" content="YunFei Wang">
-<meta property="article:tag" content="AOP">
-<meta property="article:tag" content="注解">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://wyfboy.github.io/2021/03/27/AOP/oop.png">
+<meta name="twitter:image" content="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402144454484.png">
 
-<link rel="canonical" href="http://wyfboy.github.io/2021/03/27/AOP/">
+<link rel="canonical" href="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
 
 
 <script id="page-configurations">
@@ -54,7 +61,7 @@
   };
 </script>
 
-  <title>AOP与OOP的比较 | 竹林幽居</title>
+  <title>git操作命令 | 竹林幽居</title>
   
 
 
@@ -213,7 +220,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://wyfboy.github.io/2021/03/27/AOP/">
+    <link itemprop="mainEntityOfPage" href="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -228,7 +235,7 @@
 	    
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          AOP与OOP的比较
+          git操作命令
         </h1>
 
         <div class="post-meta">
@@ -237,17 +244,23 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-27 16:37:07 / 修改时间：17:55:44" itemprop="dateCreated datePublished" datetime="2021-03-27T16:37:07+08:00">2021-03-27</time>
+              <time title="创建时间：2021-04-01 13:49:00" itemprop="dateCreated datePublished" datetime="2021-04-01T13:49:00+08:00">2021-04-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-02 16:19:59" itemprop="dateModified" datetime="2021-04-02T16:19:59+08:00">2021-04-02</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a>
+                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
                 </span>
             </span>
 
@@ -257,14 +270,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -276,34 +289,106 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？"><a href="#AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？" class="headerlink" title="AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？"></a>AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？</h2><p>​        Aop主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合的隔离效果。</p>
-<span id="more"></span>
+        <h2 id="Git基本概念"><a href="#Git基本概念" class="headerlink" title="Git基本概念"></a>Git基本概念</h2><h3 id="集中式和分布式的版本控制系统的比较"><a href="#集中式和分布式的版本控制系统的比较" class="headerlink" title="集中式和分布式的版本控制系统的比较"></a>集中式和分布式的版本控制系统的比较</h3><ul>
+<li>集中式的版本控制（CVCS），中央服务器作为协同工作的版本控制系统，可以让在不同系统上的开发者协同工作。但是若中央服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</li>
+</ul>
+<p>​                                        <img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402144454484.png" alt="image-20210402144454484" style="zoom:50%;">        </p>
+<ul>
+<li>分布式版本控制系统（DVCS），客户端并不只是提取到最新版本的文件快照，而是把代码仓库完整的镜像下来，包括完整的历史记录。这么一来，任何一处协同工作的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</li>
+</ul>
+<img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402144032267.png" style="zoom:50%;">
 
-<p>​        比如我们最常见的就是日志记录了，举个例子，我们现在提供一个查询学生信息的服务，但是我们希望记录有谁进行了这个查询。如果按照传统的OOP的实现的话，那我们实现了一个查询学生信息的服务接口(StudentInfoService)和其实现 类 （StudentInfoServiceImpl.java），同时为了要进行记录的话，那我们在实现类(StudentInfoServiceImpl.java)中要添加其实现记录的过程<br>​        当要实现的服务有多个时，那就要在每个实现类都添加这些记录过程，这就非常繁琐，而且每个实现类都与记录服务日志的行为紧耦合，违反了面向对象的规则。</p>
-<p><strong>一般oop模式：</strong></p>
-<p><img data-src="oop.png"></p>
-<p>每一个模块都跟日志、事务这些功能交织在一起，无法分离，每当修改日志的形式的时候，需要非常多的代码。</p>
-<p><strong>aop模式：</strong></p>
-<p>​                                                           <img data-src="aop.png"></p>
-<p>输入的数据先经过日志、事务等控制模块，然后再流向实际的业务模块，而日志、事务这些控制模块看起来就像一道切面，切在数据流的中间</p>
-<p><strong>优势：</strong></p>
-<ol>
-<li>解耦</li>
-<li>重复利用代码</li>
-<li>便于装卸</li>
-</ol>
-<h2 id="Configuration使用示例"><a href="#Configuration使用示例" class="headerlink" title="Configuration使用示例"></a>Configuration使用示例</h2><p>1、配置类里面使用@Bean标注在方法上给容器注册组件，默认也是单实例的</p>
-<p>2、配置类本身也是组件</p>
-<p>3、proxyBeanMethods：代理bean的方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Full(proxyBeanMethods = <span class="keyword">true</span>)、【保证每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是单实例的】</span><br><span class="line">Lite(proxyBeanMethods = <span class="keyword">false</span>)【每个<span class="meta">@Bean</span>方法被调用多少次返回的组件都是新创建的】</span><br></pre></td></tr></table></figure>
+<h3 id="Git基本概念-1"><a href="#Git基本概念-1" class="headerlink" title="Git基本概念"></a>Git基本概念</h3><ul>
+<li><strong>工作区</strong>：在电脑中能看到的目录。</li>
+<li><strong>暂存区</strong>：一般放在<code>.git</code>目录下的index文件（.git/index）中。</li>
+<li><strong>版本库</strong>：工作区有一个隐藏目录<code>.git</code>，这个不算工作区，而是Git的版本库。</li>
+</ul>
+<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210401134958468.png" alt="image-20210401134958468"></p>
+<ul>
+<li>“index”标记的为暂存区，“master”标记的为master分支所代表的目录树</li>
+<li>当对工作区修改（或新增）的文件执行<code>git add</code>命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
+<li>当执行提交操作<code>git commit</code>时，暂存区的目录树写到版本库中，master分支会做相应的更新。即master指向的目录树就是提交时暂存区的目录树。</li>
+<li>当执行<code>git reset HEAD</code>命令时，暂存区的目录树会被重写，被master分支指向的目录树所替代，但是工作区不受影响。</li>
+<li>当执行<code>git rm --cached &lt;file&gt;</code>命令时，会直接从暂存区删除文件，工作区则不会做出改变。</li>
+<li>当执行 <code>git checkout .</code>或者 <code>git checkout -- &lt;file&gt;</code>命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</li>
+<li>当执行 <code>git checkout HEAD .</code>或 <code>git checkout HEAD &lt;file&gt;</code>命令时，会用HEAD指向的master分支中的全部或者部分文件替换暂存区和工作区中的文件。这个命令也是极具危险的，因为不仅会清除工作区的未提交的改动，也会清除暂存区中未提交的改动。</li>
+</ul>
+<h2 id="Git创建仓库"><a href="#Git创建仓库" class="headerlink" title="Git创建仓库"></a>Git创建仓库</h2><h3 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h3><p>使用当前目录作为Git仓库，我们只需使它初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 
-<p><strong>组件依赖必须使用Full模式默认。其他默认是否Lite模式</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration(proxyBeanMethods = false)</span> <span class="comment">//告诉SpringBoot这是一个配置类 == 配置文件</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment"> * Full:外部无论对配置类中的这个组件注册方法调用多少次获取的都是之前注册容器中的单实例对象</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">   <span class="meta">@Bean</span> <span class="comment">//给容器中添加组件。以方法名作为组件的id。返回类型就是组件类型。返回的值，就是组件在容器中的实例</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> User <span class="title">user01</span><span class="params">()</span></span>&#123;</span><br><span class="line">   User zhangsan = <span class="keyword">new</span> User(<span class="string">&quot;zhangsan&quot;</span>, <span class="number">18</span>);</span><br><span class="line">   <span class="comment">//user组件依赖了Pet组件</span></span><br><span class="line">   zhangsan.setPet(tomcatPet());</span><br><span class="line">   <span class="keyword">return</span> zhangsan;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Bean(&quot;tom&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Pet <span class="title">tomcatPet</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Pet(<span class="string">&quot;tomcat&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>该命令执行完后会在当前目录生成一个.git目录。</p>
+<p>使用我们指定目录作为Git仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init newrepo</span><br></pre></td></tr></table></figure>
+
+<p>初始化后，会在newrepo目录下出现一个名为.git的目录，所有Git需要的数据和资源都存放在这个目录中。如果当前目录下有几个文件想要纳入版本控制，需要先用<code>git add</code>命令告诉Git开始对这些文件进行跟踪，然后提交：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add README</span><br><span class="line">$ git commit -m &quot;初始化项目版本&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以上命令将目录下以.c结尾及README文件提交到仓库中。</p>
+<hr>
+<h3 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h3><p>克隆仓库的命令格式:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;repo&gt;</span><br></pre></td></tr></table></figure>
+
+<p>克隆到指定的目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone &lt;repo&gt; &lt;directory&gt;</span><br></pre></td></tr></table></figure>
+
+<p>可以使用不同的协议克隆，其中最常见的是ssh，因为速度较快，还可以配置公钥免输入密码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:fsliurujie&#x2F;test.git         --SSH协议</span><br><span class="line">git clone git:&#x2F;&#x2F;github.com&#x2F;fsliurujie&#x2F;test.git          --GIT协议</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;fsliurujie&#x2F;test.git      --HTTPS协议</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>使用<code>git config</code>命令配置git</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line">credential.helper&#x3D;osxkeychain</span><br><span class="line">core.repositoryformatversion&#x3D;0</span><br><span class="line">core.filemode&#x3D;true</span><br><span class="line">core.bare&#x3D;false</span><br><span class="line">core.logallrefupdates&#x3D;true</span><br><span class="line">core.ignorecase&#x3D;true</span><br><span class="line">core.precomposeunicode&#x3D;true</span><br></pre></td></tr></table></figure>
+
+<p>编辑git配置文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config -e  #针对当前仓库</span><br><span class="line">或者：</span><br><span class="line">$ git config -e --global  #针对系统上所有仓库</span><br></pre></td></tr></table></figure>
+
+<p>设置提交代码时的用户信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;wyfboy&quot;</span><br><span class="line">$ git config --global user.email test@wyfboy.com</span><br></pre></td></tr></table></figure>
+
+<p>如果去掉**–global**参数，只会对当前仓库有效。</p>
+<hr>
+<h2 id="Git基本操作"><a href="#Git基本操作" class="headerlink" title="Git基本操作"></a>Git基本操作</h2><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402105859872.png" alt="image-20210402105859872"></p>
+<ul>
+<li>workspace：工作区</li>
+<li>staging area：暂存区/缓存区</li>
+<li>local repository：版本库或本地仓库</li>
+<li>remote repository：远程仓库</li>
+</ul>
+<h3 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h3><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110153681.png" alt="image-20210402110153681"></p>
+<h4 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h4><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110222956.png" alt="image-20210402110222956"></p>
+<h4 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h4><p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402110241186.png" alt="image-20210402110241186"></p>
+<h2 id="Git分支管理"><a href="#Git分支管理" class="headerlink" title="Git分支管理"></a>Git分支管理</h2><p>创建分支命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch (branchName)</span><br></pre></td></tr></table></figure>
+
+<p>切换分支命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout (branchName)</span><br></pre></td></tr></table></figure>
+
+<p>切换分支时，Git会用该分支的最后提交的快照替换你的工作区目录的内容，所以多个分支不需要多个目录。</p>
+<hr>
+<p>列出分支命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+
+<p>合并分支命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branchName&gt;</span><br></pre></td></tr></table></figure>
+
+<p>一旦某分支有了独立的内容，可以使用以上命令将任何分支合并到当前主分支中，合并完后就可以删除分支了。 </p>
+<hr>
+<p>删除分支命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d (branchName)</span><br></pre></td></tr></table></figure>
+
+<p>合并冲突：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git status -s</span><br><span class="line">UU runoob.php</span><br><span class="line">$ git add runoob.php</span><br><span class="line">$ git status -s</span><br><span class="line">M  runoob.php</span><br><span class="line">$ git commit</span><br><span class="line">[master 88afe0e] Merge branch &#39;change_site&#39;</span><br></pre></td></tr></table></figure>
 
 
-<p><strong>@Configuration测试代码如下</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line">相当于</span><br><span class="line"><span class="meta">@SpringBootConfiguration</span></span><br><span class="line"><span class="meta">@EnableAutoConfiguration</span></span><br><span class="line"><span class="meta">@ComponentScan(&quot;com.atguigu.boot&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MainApplication</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//1、返回我们IOC容器</span></span><br><span class="line">    ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2、查看容器里面的组件</span></span><br><span class="line">    String[] names = run.getBeanDefinitionNames();</span><br><span class="line">    <span class="keyword">for</span> (String name : names) &#123;</span><br><span class="line">        System.out.println(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//3、从容器中获取组件</span></span><br><span class="line"></span><br><span class="line">    Pet tom01 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    Pet tom02 = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;组件：&quot;</span>+(tom01 == tom02));</span><br><span class="line">    <span class="comment">//4、com.atguigu.boot.config.MyConfig$$EnhancerBySpringCGLIB$$51f1e1ca@1654a892</span></span><br><span class="line">    MyConfig bean = run.getBean(MyConfig.class);</span><br><span class="line">    System.out.println(bean);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果@Configuration(proxyBeanMethods = true)代理对象调用方法。SpringBoot总会检查这个组件是否在容器中有。</span></span><br><span class="line">    <span class="comment">//保持组件单实例</span></span><br><span class="line">    User user = bean.user01();</span><br><span class="line">    User user1 = bean.user01();</span><br><span class="line">    System.out.println(user == user1);</span><br><span class="line">    User user01 = run.getBean(<span class="string">&quot;user01&quot;</span>, User.class);</span><br><span class="line">    Pet tom = run.getBean(<span class="string">&quot;tom&quot;</span>, Pet.class);</span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">&quot;用户的宠物：&quot;</span>+(user01.getPet() == tom));</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="测试："><a href="#测试：" class="headerlink" title="测试："></a>测试：</h3><p>以下操作把README.md添加版本控制，这样在每个分支上都会看到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git branch</span><br><span class="line">* master</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ touch README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git add README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ git commit -m &quot;第一次版本提交&quot;</span><br><span class="line">[master 31185f1] 第一次版本提交</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (master)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br><span class="line">64845@DESKTOP-LIFUUP9 MINGW64 &#x2F;e&#x2F;wyfboy (wyf)</span><br><span class="line">$ ls</span><br><span class="line">README.md</span><br></pre></td></tr></table></figure>
+
+<p>以下操作将add进暂存区的文件删除：</p>
+<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402145541386.png" alt="image-20210402145541386"></p>
+<p>在wyf分支上移除了一个文件test.txt并添加了一个文件runoob.php，但我们切换回master分支，发现test.txt又回来了，并且新增的runoob.php不在主分支上。</p>
+<p>这样使用分支将工作切分开来，从而让我们在不同的开发环境中做事，并来回切换。</p>
+<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402152823094.png" alt="image-20210402152823094"></p>
+<p>将wyf分支合并到主分支上去，这样wyf分支中的runoob.php将会到master分支上,并且test.txt被删除。合并后，wyf分支就可以删除了：</p>
+<p><img data-src="git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/image-20210402153933923.png" alt="image-20210402153933923"></p>
 
     </div>
 
@@ -338,8 +423,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/AOP/" rel="tag"><i class="fa fa-tag"></i> AOP</a>
-              <a href="/tags/%E6%B3%A8%E8%A7%A3/" rel="tag"><i class="fa fa-tag"></i> 注解</a>
+              <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           </div>
 
         
@@ -348,13 +432,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="SpringBoot学习笔记">
-      <i class="fa fa-chevron-left"></i> SpringBoot学习笔记
+    <a href="/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/" rel="prev" title="github-hexo图片无法显示">
+      <i class="fa fa-chevron-left"></i> github-hexo图片无法显示
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/" rel="next" title="Configuration注解用法">
-      Configuration注解用法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -413,7 +494,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%9F%E5%93%AA%E4%BA%9B%E6%93%8D%E4%BD%9C%E9%9C%80%E8%A6%81AOP%E7%BC%96%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">AOP面向切面，为什么要面向切面？哪些操作需要AOP编程？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configuration%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">Configuration使用示例</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">Git基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="nav-number">1.1.</span> <span class="nav-text">集中式和分布式的版本控制系统的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-1"><span class="nav-number">1.2.</span> <span class="nav-text">Git基本概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">Git创建仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-init"><span class="nav-number">2.1.</span> <span class="nav-text">git init</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-clone"><span class="nav-number">2.2.</span> <span class="nav-text">git clone</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">Git基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E4%B8%8E%E4%BF%AE%E6%94%B9"><span class="nav-number">3.1.</span> <span class="nav-text">提交与修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E6%97%A5%E5%BF%97"><span class="nav-number">3.1.1.</span> <span class="nav-text">提交日志</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E6%93%8D%E4%BD%9C"><span class="nav-number">3.1.2.</span> <span class="nav-text">远程操作</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Git分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%EF%BC%9A"><span class="nav-number">4.1.</span> <span class="nav-text">测试：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

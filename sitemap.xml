@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</loc>
+    
+    <lastmod>2021-04-02</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wyfboy.github.io/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
     
     <lastmod>2021-04-01</lastmod>
@@ -67,7 +74,7 @@
 
   <url>
     <loc>http://wyfboy.github.io/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,28 +82,35 @@
   
   <url>
     <loc>http://wyfboy.github.io/tags/AOP/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://wyfboy.github.io/tags/SpringBoot/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://wyfboy.github.io/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://wyfboy.github.io/tags/Git/</loc>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -105,14 +119,21 @@
   
   <url>
     <loc>http://wyfboy.github.io/categories/SpringBoot/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://wyfboy.github.io/categories/hexo/</loc>
-    <lastmod>2021-04-01</lastmod>
+    <lastmod>2021-04-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://wyfboy.github.io/categories/Git/</loc>
+    <lastmod>2021-04-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
