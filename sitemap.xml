@@ -2,70 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</loc>
+    <loc>https://wyfboy.return1.cn/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2021-04-06</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
+    <loc>https://wyfboy.return1.cn/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
     
     <lastmod>2021-04-01</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/404.html</loc>
+    <loc>https://wyfboy.return1.cn/404.html</loc>
     
     <lastmod>2021-04-01</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/2021/03/27/AOP/</loc>
+    <loc>https://wyfboy.return1.cn/2021/03/27/AOP/</loc>
     
     <lastmod>2021-03-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</loc>
+    <loc>https://wyfboy.return1.cn/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</loc>
     
     <lastmod>2021-03-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://wyfboy.return1.cn/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2021-03-27</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/needsharebutton/README.html</loc>
+    <loc>https://wyfboy.return1.cn/needsharebutton/README.html</loc>
     
     <lastmod>2021-03-20</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/categories/index.html</loc>
+    <loc>https://wyfboy.return1.cn/categories/index.html</loc>
     
     <lastmod>2021-03-20</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/tags/index.html</loc>
+    <loc>https://wyfboy.return1.cn/tags/index.html</loc>
     
     <lastmod>2021-03-20</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/about/index.html</loc>
+    <loc>https://wyfboy.return1.cn/about/index.html</loc>
     
     <lastmod>2021-03-20</lastmod>
     
@@ -73,7 +73,7 @@
   
 
   <url>
-    <loc>http://wyfboy.github.io/</loc>
+    <loc>https://wyfboy.return1.cn/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -81,35 +81,35 @@
 
   
   <url>
-    <loc>http://wyfboy.github.io/tags/AOP/</loc>
+    <loc>https://wyfboy.return1.cn/tags/AOP/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/</loc>
+    <loc>https://wyfboy.return1.cn/tags/%E6%B3%A8%E8%A7%A3/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/tags/SpringBoot/</loc>
+    <loc>https://wyfboy.return1.cn/tags/SpringBoot/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
+    <loc>https://wyfboy.return1.cn/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/tags/Git/</loc>
+    <loc>https://wyfboy.return1.cn/tags/Git/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -118,21 +118,21 @@
 
   
   <url>
-    <loc>http://wyfboy.github.io/categories/SpringBoot/</loc>
+    <loc>https://wyfboy.return1.cn/categories/SpringBoot/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/categories/hexo/</loc>
+    <loc>https://wyfboy.return1.cn/categories/hexo/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://wyfboy.github.io/categories/Git/</loc>
+    <loc>https://wyfboy.return1.cn/categories/Git/</loc>
     <lastmod>2021-04-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

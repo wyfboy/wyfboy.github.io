@@ -3,11 +3,11 @@
   <title>竹林幽居</title>
   
   <subtitle>曲径通幽处，禅房花木深...</subtitle>
-  <link href="http://wyfboy.github.io/atom.xml" rel="self"/>
+  <link href="https://wyfboy.return1.cn/atom.xml" rel="self"/>
   
-  <link href="http://wyfboy.github.io/"/>
+  <link href="https://wyfboy.return1.cn/"/>
   <updated>2021-04-06T03:57:33.675Z</updated>
-  <id>http://wyfboy.github.io/</id>
+  <id>https://wyfboy.return1.cn/</id>
   
   <author>
     <name>YunFei Wang</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>git操作命令</title>
-    <link href="http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"/>
-    <id>http://wyfboy.github.io/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</id>
+    <link href="https://wyfboy.return1.cn/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/"/>
+    <id>https://wyfboy.return1.cn/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</id>
     <published>2021-04-01T05:49:00.000Z</published>
     <updated>2021-04-06T03:57:33.675Z</updated>
     
@@ -31,17 +31,17 @@
     
     
     
-    <category term="Git" scheme="http://wyfboy.github.io/categories/Git/"/>
+    <category term="Git" scheme="https://wyfboy.return1.cn/categories/Git/"/>
     
     
-    <category term="Git" scheme="http://wyfboy.github.io/tags/Git/"/>
+    <category term="Git" scheme="https://wyfboy.return1.cn/tags/Git/"/>
     
   </entry>
   
   <entry>
     <title>github-hexo图片无法显示</title>
-    <link href="http://wyfboy.github.io/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"/>
-    <id>http://wyfboy.github.io/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</id>
+    <link href="https://wyfboy.return1.cn/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"/>
+    <id>https://wyfboy.return1.cn/2021/04/01/github-hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</id>
     <published>2021-04-01T03:46:44.000Z</published>
     <updated>2021-04-01T04:01:12.944Z</updated>
     
@@ -53,17 +53,17 @@
     
     
     
-    <category term="hexo" scheme="http://wyfboy.github.io/categories/hexo/"/>
+    <category term="hexo" scheme="https://wyfboy.return1.cn/categories/hexo/"/>
     
     
-    <category term="hexo图片无法显示" scheme="http://wyfboy.github.io/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"/>
+    <category term="hexo图片无法显示" scheme="https://wyfboy.return1.cn/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/"/>
     
   </entry>
   
   <entry>
     <title>Configuration注解用法</title>
-    <link href="http://wyfboy.github.io/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/"/>
-    <id>http://wyfboy.github.io/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</id>
+    <link href="https://wyfboy.return1.cn/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/"/>
+    <id>https://wyfboy.return1.cn/2021/03/27/Configuration%E6%B3%A8%E8%A7%A3%E7%94%A8%E6%B3%95/</id>
     <published>2021-03-27T08:44:06.000Z</published>
     <updated>2021-03-27T08:47:02.058Z</updated>
     
@@ -76,17 +76,17 @@
     
     
     
-    <category term="SpringBoot" scheme="http://wyfboy.github.io/categories/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://wyfboy.return1.cn/categories/SpringBoot/"/>
     
     
-    <category term="注解" scheme="http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+    <category term="注解" scheme="https://wyfboy.return1.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>AOP与OOP的比较</title>
-    <link href="http://wyfboy.github.io/2021/03/27/AOP/"/>
-    <id>http://wyfboy.github.io/2021/03/27/AOP/</id>
+    <link href="https://wyfboy.return1.cn/2021/03/27/AOP/"/>
+    <id>https://wyfboy.return1.cn/2021/03/27/AOP/</id>
     <published>2021-03-27T08:37:07.000Z</published>
     <updated>2021-03-27T09:55:44.716Z</updated>
     
@@ -97,19 +97,19 @@
     
     
     
-    <category term="SpringBoot" scheme="http://wyfboy.github.io/categories/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://wyfboy.return1.cn/categories/SpringBoot/"/>
     
     
-    <category term="AOP" scheme="http://wyfboy.github.io/tags/AOP/"/>
+    <category term="AOP" scheme="https://wyfboy.return1.cn/tags/AOP/"/>
     
-    <category term="注解" scheme="http://wyfboy.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
+    <category term="注解" scheme="https://wyfboy.return1.cn/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot学习笔记</title>
-    <link href="http://wyfboy.github.io/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://wyfboy.github.io/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://wyfboy.return1.cn/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://wyfboy.return1.cn/2021/03/23/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2021-03-23T08:18:33.000Z</published>
     <updated>2021-03-27T08:46:33.293Z</updated>
     
@@ -123,10 +123,10 @@
     
     
     
-    <category term="SpringBoot" scheme="http://wyfboy.github.io/categories/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://wyfboy.return1.cn/categories/SpringBoot/"/>
     
     
-    <category term="SpringBoot" scheme="http://wyfboy.github.io/tags/SpringBoot/"/>
+    <category term="SpringBoot" scheme="https://wyfboy.return1.cn/tags/SpringBoot/"/>
     
   </entry>
   
