@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wyfboy.return1.cn/2021/04/07/Redis/</loc>
+    
+    <lastmod>2021-04-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wyfboy.return1.cn/2021/04/07/springboot%E7%9A%84HTTPS%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2021-04-07</lastmod>
@@ -102,6 +109,13 @@
   </url>
   
   <url>
+    <loc>https://wyfboy.return1.cn/tags/Redis/</loc>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wyfboy.return1.cn/tags/SpringBoot/</loc>
     <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
@@ -116,14 +130,14 @@
   </url>
   
   <url>
-    <loc>https://wyfboy.return1.cn/tags/Git/</loc>
+    <loc>https://wyfboy.return1.cn/tags/HTTPS%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://wyfboy.return1.cn/tags/HTTPS%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://wyfboy.return1.cn/tags/Git/</loc>
     <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
