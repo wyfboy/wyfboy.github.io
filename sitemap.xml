@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wyfboy.return1.cn/2021/04/07/springboot%E7%9A%84HTTPS%E9%85%8D%E7%BD%AE/</loc>
+    
+    <lastmod>2021-04-07</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://wyfboy.return1.cn/2021/04/01/git%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/</loc>
     
     <lastmod>2021-04-06</lastmod>
@@ -74,7 +81,7 @@
 
   <url>
     <loc>https://wyfboy.return1.cn/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,35 +89,42 @@
   
   <url>
     <loc>https://wyfboy.return1.cn/tags/AOP/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/tags/%E6%B3%A8%E8%A7%A3/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/tags/SpringBoot/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/tags/hexo%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/tags/Git/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wyfboy.return1.cn/tags/HTTPS%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,21 +133,21 @@
   
   <url>
     <loc>https://wyfboy.return1.cn/categories/SpringBoot/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/categories/hexo/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://wyfboy.return1.cn/categories/Git/</loc>
-    <lastmod>2021-04-06</lastmod>
+    <lastmod>2021-04-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

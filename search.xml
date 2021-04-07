@@ -331,4 +331,62 @@ data[key] = $.html();
         <tag>Git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Tomcat的HTTPS配置</title>
+    <url>/2021/04/07/springboot%E7%9A%84HTTPS%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<script type="text/javascript" src="/js/src/baidu.js"></script>
+
+<p>​        由于HTTPS具有良好的安全性，在开发中得到了越来越广泛的应用，对于个人开发者而言，一个HTTPS证书的价格还是有点贵的，国内有一些云服务器厂商提供免费的HTTPS证书，一个账号可以申请数个。不过在jdk中提供了一个Java数字证书管理工具类keytool，在\jdk\bin目录下，通过这个工具可以自己生成一个数字证书。</p>
+<span id="more"></span>
+
+<h1 id="HTTP配置"><a href="#HTTP配置" class="headerlink" title="HTTP配置"></a>HTTP配置</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">keytool -genkey -alias tomcathttps -keyalg RSA -keysize 2048 -keystore sang.p12 -validity 365</span><br></pre></td></tr></table></figure>
+
+<p>​    命令解释：</p>
+<ul>
+<li>-genkey表示要创建一个新的密钥</li>
+<li>-alias表示keystore的别名</li>
+<li>-keyalg比哦是使用的加密算法是RSA，一种非对称加密算法</li>
+<li>-keysize表示密钥的长度</li>
+<li>-keystore表示生成的密钥存放位置</li>
+<li>-validity表示密钥的有效时间，单位为天</li>
+</ul>
+<p>​        在cmd窗口中直接执行如上命令，在执行过程中需要输入密钥口令等信息，根据提示输入即可。命令执行完后，会在当前用户目录下生成一个名为sang.p12的文件，将这个文件复制到项目的根目录下，然后在application.properties中做如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">serve.ssl.key-store&#x3D;sang.p12</span><br><span class="line">serve.ssl.key-alias&#x3D;tomcathttps</span><br><span class="line">serve.ssl.key-store-password&#x3D;123456</span><br></pre></td></tr></table></figure>
+
+<p>​    代码解释：</p>
+<ul>
+<li><p>key-store表示密钥文件名</p>
+</li>
+<li><p>key-alias表示密钥别名</p>
+</li>
+<li><p>key-store-password就是在cmd中输入的密码</p>
+<p>配置成功后，启动项目，在地址栏输入如下命令来查看效果。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;localhost:8080&#x2F;hello</span><br></pre></td></tr></table></figure>
+
+<p>注意，证书是自己生成的，不被浏览器认可，此时添加信任或继续前进即可，如图：</p>
+<p><img data-src="image-20210407100259307.png"></p>
+</li>
+</ul>
+<p>成功运行的结果如图：</p>
+<p><img data-src="image-20210407100601746.png"></p>
+<p>此时，如果以HTTP方式访问接口，会出现如下情况：</p>
+<p><img data-src="image-20210407100728183.png"></p>
+<p>​    这是因为SpringBoot不支持同时在配置中启动HTTP和HTTPS，这个时候可以配置请求重定向，将HTTP请求重定向为HTTPS请求。配置方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@Configuration(proxyBeanMethods &#x3D; true)</span><br><span class="line">public class MyConfig &#123;</span><br><span class="line">    @Bean</span><br><span class="line">    TomcatServletWebServerFactory tomcatServletWebServerFactory()&#123;</span><br><span class="line">        TomcatServletWebServerFactory factory &#x3D; new TomcatServletWebServerFactory()&#123;</span><br><span class="line">            @Override</span><br><span class="line">            protected void postProcessContext(Context context)&#123;</span><br><span class="line">                SecurityConstraint constraint &#x3D; new SecurityConstraint();</span><br><span class="line">                constraint.setUserConstraint(&quot;CONFIDENTIAL&quot;);</span><br><span class="line">                SecurityCollection collection &#x3D; new SecurityCollection();</span><br><span class="line">                collection.addPattern(&quot;&#x2F;*&quot;);</span><br><span class="line">                constraint.addCollection(collection);</span><br><span class="line">                context.addConstraint(constraint);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        factory.addAdditionalTomcatConnectors(createTomcatConnector());</span><br><span class="line">        return factory;</span><br><span class="line">    &#125;</span><br><span class="line">    private Connector createTomcatConnector()&#123;</span><br><span class="line">        Connector connector &#x3D; new Connector(&quot;org.apach.coyote.http11.Http11NioProtocol&quot;);</span><br><span class="line">        connector.setScheme(&quot;http&quot;);</span><br><span class="line">        connector.setPort(8080);</span><br><span class="line">        connector.setSecure(false);</span><br><span class="line">        connector.setRedirectPort(8081);</span><br><span class="line">        return connector;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​    配置完成后，在浏览器中输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http:&#x2F;&#x2F;localhost:8080&#x2F;hello</span><br></pre></td></tr></table></figure>
+
+<p>会自动重定向到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;localhost:8081&#x2F;hello</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>SpringBoot</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+        <tag>HTTPS配置</tag>
+      </tags>
+  </entry>
 </search>
